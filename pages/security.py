@@ -118,7 +118,16 @@ def render_security_report() -> None:
         return
 
     signal_state = build_tactical_signal_state(frames, summaries)
-    cycle_states, hierarchy = build_cyclical_engine(frames)
+    try:
+        cycle_states, hierarchy = build_cyclical_engine(frames)
+    except ValueError as error:
+        st.error(f"Gerarchia ciclica non disponibile: {error}")
+        if errors:
+            with st.expander("TIMEFRAME NON DISPONIBILI"):
+                for timeframe, message in errors.items():
+                    st.write(f"**{TIMEFRAME_LABELS[timeframe]}:** {message}")
+        return
+
     report = build_security_report(ticker, summaries, signal_state, cycle_states, hierarchy)
     latest_close = float(daily_raw["Close"].iloc[-1])
     previous_close = float(daily_raw["Close"].iloc[-2])
@@ -185,6 +194,8 @@ def render_security_report() -> None:
     st.markdown("<div class='terminal-subheader'>CYCLICAL ENGINE // U-A-D-T MAP</div>", unsafe_allow_html=True)
     phase_rows = []
     for key in ("YEARLY", "QUARTERLY", "MONTHLY", "WEEKLY"):
+        if key not in cycle_states:
+            continue
         state = cycle_states[key]
         phase_rows.append({
             "TIMEFRAME": TIMEFRAME_LABELS[key].upper(),

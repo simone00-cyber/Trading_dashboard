@@ -18,7 +18,7 @@ render_top_bar()
 
 with st.sidebar:
     st.markdown("<div class='terminal-header'>NAVIGATION</div>", unsafe_allow_html=True)
-    page = st.radio("Page", ["GLOBAL OVERVIEW", "GLOBAL MACRO", "GLOBAL SHIPPING", "MARKET REGIME", "SECURITY REPORT", "STRATEGY LAB", "METHODOLOGY"], label_visibility="collapsed")
+    page = st.radio("Page", ["GLOBAL OVERVIEW", "GLOBAL MACRO", "MARITIME INTELLIGENCE", "MARKET REGIME", "SECURITY REPORT", "STRATEGY LAB", "METHODOLOGY"], label_visibility="collapsed")
     st.divider()
     if st.button("CLEAR DATA CACHE", use_container_width=True):
         st.cache_data.clear()
@@ -27,7 +27,7 @@ with st.sidebar:
 PAGES = {
     "GLOBAL OVERVIEW": render_global_overview,
     "GLOBAL MACRO": render_global_macro,
-    "GLOBAL SHIPPING": render_shipping,
+    "MARITIME INTELLIGENCE": render_shipping,
     "MARKET REGIME": render_market_regime,
     "SECURITY REPORT": render_security_report,
     "STRATEGY LAB": render_strategy_lab,

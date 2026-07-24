@@ -16,12 +16,12 @@ def _is_falling(state: CycleState) -> bool:
 
 
 def assess_hierarchy(states: Dict[str, CycleState]) -> HierarchyAssessment:
-    required = {"YEARLY", "QUARTERLY", "MONTHLY", "WEEKLY"}
+    required = {"QUARTERLY", "MONTHLY", "WEEKLY"}
     missing = required.difference(states)
     if missing:
         raise ValueError(f"Timeframe mancanti: {sorted(missing)}")
 
-    annual = states["YEARLY"]
+    annual = states.get("YEARLY")
     quarterly = states["QUARTERLY"]
     monthly = states["MONTHLY"]
     weekly = states["WEEKLY"]
@@ -58,11 +58,13 @@ def assess_hierarchy(states: Dict[str, CycleState]) -> HierarchyAssessment:
             trigger = "Attendere una nuova svolta settimanale; il rating dipenderà dall'allineamento dei timeframe superiori."
         notes.append("La metodologia distingue i modelli di inversione sincronizzati e non sincronizzati.")
 
-    if annual.direction != quarterly.direction:
+    if annual is None:
+        notes.append("Timeframe annuale non disponibile: storico insufficiente dopo il warm-up del Composite Momentum.")
+    elif annual.direction != quarterly.direction:
         notes.append("Annuale e trimestrale non sono allineati: il contesto strutturale è in transizione o divergenza.")
 
     return HierarchyAssessment(
-        annual_phase=annual.phase,
+        annual_phase=annual.phase if annual is not None else "N/D",
         quarterly_phase=quarterly.phase,
         monthly_phase=monthly.phase,
         weekly_phase=weekly.phase,

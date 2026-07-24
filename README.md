@@ -30,7 +30,7 @@ Questa versione introduce:
 - logging rotante in `logs/terminal.log`;
 - copertura dati per pilastro e per orizzonte;
 - test automatici con `pytest`;
-- modulo Shipping marcato esplicitamente come `DEMO DATA` e disattivabile.
+- modulo Maritime Intelligence alimentato da AISStream, senza dati simulati.
 
 Eseguire i test:
 
@@ -130,3 +130,21 @@ selected research policy.
 - Performance analytics also use the adjusted total-return series.
 - Candlestick charts, last price and displayed entry/exit prices use actual traded OHLC values.
 - This is a transparent framework convention; the public methodology documents do not specify the adjustment convention.
+
+## Maritime Intelligence (AISStream)
+
+The former simulated Shipping page has been replaced by a live AIS dashboard for the Strait of Hormuz. It uses a backend WebSocket connection to AISStream and displays vessel positions, broad AIS vessel class, MMSI/IMO when transmitted, speed, course, indicative inbound/outbound direction, destination, ETA and draught when available.
+
+Setup:
+
+```bash
+cp .env.example .env
+# edit .env and set AISSTREAM_API_KEY
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
+```
+
+The API key is never embedded in source code. AISStream is a beta/community feed: coverage and field completeness may vary, and exact cargo, ownership and operator are not inferred.
+
+## Maritime Intelligence v9.2
+The Maritime Intelligence page now reads the public HormuzTracker JSON endpoint and renders a native crisis-intelligence dashboard covering traffic, severity, carriers, insurance, route impact, country exposure and timeline. The page also accepts a cached JSON export for offline preview. Source attribution and dataset timestamps are shown in the UI.

@@ -14,10 +14,17 @@ from analysis.cyclical.states import build_cycle_state
 def build_cyclical_engine(
     frames: Dict[str, pd.DataFrame],
 ) -> Tuple[Dict[str, CycleState], HierarchyAssessment]:
-    states = {
-        timeframe: build_cycle_state(timeframe, frame)
-        for timeframe, frame in frames.items()
-        if timeframe in {"YEARLY", "QUARTERLY", "MONTHLY", "WEEKLY"}
-    }
+    states: Dict[str, CycleState] = {}
+    for timeframe, frame in frames.items():
+        if timeframe not in {"YEARLY", "QUARTERLY", "MONTHLY", "WEEKLY"}:
+            continue
+        try:
+            states[timeframe] = build_cycle_state(timeframe, frame)
+        except ValueError:
+            # A higher timeframe may not have enough post-warm-up Composite
+            # observations (especially YEARLY on short histories). Keep the
+            # available lower timeframes instead of failing the whole report.
+            continue
+
     hierarchy = assess_hierarchy(states)
     return states, hierarchy
