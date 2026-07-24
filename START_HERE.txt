@@ -1,0 +1,17 @@
+1. Open a terminal inside this exact folder.
+2. Install dependencies:
+   python -m pip install -r requirements.txt
+3. Start the application:
+   python -m streamlit run app.py
+4. Open STRATEGY LAB.
+5. Open RESEARCH.
+6. The first inner tab is DRAWDOWNS.
+
+The screen must show:
+FINAL BUILD v8.4 // Signals and Active Position use adjusted OHLC; charts and displayed levels use actual market prices. Drawdown Analysis is under RESEARCH -> DRAWDOWNS
+
+If it does not, a different/older project folder is running. Stop Streamlit with Ctrl+C and start it again from this folder.
+
+VALUATION NOTE
+- Backtest performance, benchmark, drawdown and trade returns use adjusted total-return prices when available.
+- Security price charts and displayed entry/exit prices use actual unadjusted market prices.
