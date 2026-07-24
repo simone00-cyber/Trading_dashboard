@@ -2,13 +2,13 @@ import streamlit as st
 from core.logging_config import configure_logging
 from config.theme import CUSTOM_CSS
 from ui.header import render_top_bar
-from pages.overview import render_global_overview
-from pages.macro import render_global_macro
-from pages.shipping import render_shipping
-from pages.regime import render_market_regime
-from pages.security import render_security_report
-from pages.methodology import render_methodology
-from pages.strategy_lab import render_strategy_lab
+from views.overview import render_global_overview
+from views.macro import render_global_macro
+from views.shipping import render_shipping
+from views.regime import render_market_regime
+from views.security import render_security_report
+from views.methodology import render_methodology
+from views.strategy_lab import render_strategy_lab
 
 configure_logging()
 
