@@ -271,8 +271,12 @@ def resample_ohlc(
         "High": "max",
         "Low": "min",
         "Close": "last",
-        "Volume": "sum",
     }
+    # Volume is not required by KEY, XTL or Composite Momentum. Some Yahoo
+    # Finance batch responses omit it for individual tickers, so aggregate it
+    # only when it is actually available instead of failing the whole symbol.
+    if "Volume" in daily_data.columns:
+        aggregation["Volume"] = "sum"
     if "Adj Close" in daily_data.columns:
         aggregation["Adj Close"] = "last"
     if "TotalReturnClose" in daily_data.columns:

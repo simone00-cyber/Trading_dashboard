@@ -148,3 +148,7 @@ The API key is never embedded in source code. AISStream is a beta/community feed
 
 ## Maritime Intelligence v9.2
 The Maritime Intelligence page now reads the public HormuzTracker JSON endpoint and renders a native crisis-intelligence dashboard covering traffic, severity, carriers, insurance, route impact, country exposure and timeline. The page also accepts a cached JSON export for offline preview. Source attribution and dataset timestamps are shown in the UI.
+
+## Market Screener v9.4
+
+Adds index-level ranking, public-matrix BUY candidates, sector ranking, top/flop analysis and a fully filterable cross-sectional screener for Nasdaq 100, S&P 500, FTSE MIB and DAX 40.

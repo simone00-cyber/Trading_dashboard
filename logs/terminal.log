@@ -1,46 +1,15 @@
-2026-07-24 23:41:11,089 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
-2026-07-24 23:41:12,052 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
-2026-07-24 23:41:12,715 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
-2026-07-24 23:41:12,723 | ERROR | yfinance | 
+2026-07-25 12:34:32,237 | ERROR | yfinance | Failed to get ticker 'HSIC' reason: Failed to perform, curl: (28) Operation timed out after 10003 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-07-25 12:34:35,715 | ERROR | yfinance | Failed to get ticker 'GPC' reason: Failed to perform, curl: (28) Operation timed out after 10011 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-07-25 12:34:46,487 | ERROR | yfinance | HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+2026-07-25 12:35:23,752 | ERROR | yfinance | Failed to get ticker 'ROL' reason: Failed to perform, curl: (28) Operation timed out after 10011 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-07-25 12:35:23,765 | ERROR | yfinance | $ROL: possibly delisted; no timezone found
+2026-07-25 12:35:44,346 | ERROR | yfinance | $SWK: possibly delisted; no price data found  (1d 1927-08-19 -> 2026-07-25)
+2026-07-25 12:35:44,358 | ERROR | yfinance | 
 2 Failed downloads:
-2026-07-24 23:41:12,724 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
-2026-07-24 23:41:12,724 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
-2026-07-24 23:41:13,029 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
-2026-07-24 23:41:13,030 | ERROR | yfinance | 
+2026-07-25 12:35:44,359 | ERROR | yfinance | ['ROL']: possibly delisted; no timezone found
+2026-07-25 12:35:44,365 | ERROR | yfinance | ['SWK']: possibly delisted; no price data found  (1d 1927-08-19 -> 2026-07-25)
+2026-07-25 12:35:59,101 | ERROR | yfinance | Failed to get ticker 'TSN' reason: Failed to perform, curl: (28) Operation timed out after 10004 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2026-07-25 12:35:59,103 | ERROR | yfinance | $TSN: possibly delisted; no timezone found
+2026-07-25 12:36:01,473 | ERROR | yfinance | 
 1 Failed download:
-2026-07-24 23:41:13,031 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
-2026-07-24 23:41:13,706 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
-2026-07-24 23:41:13,708 | ERROR | yfinance | 
-1 Failed download:
-2026-07-24 23:41:13,708 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
-2026-07-24 23:41:14,413 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
-2026-07-24 23:41:14,946 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
-2026-07-24 23:41:14,948 | ERROR | yfinance | 
-1 Failed download:
-2026-07-24 23:41:14,949 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
-2026-07-24 23:41:16,009 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
-2026-07-24 23:41:16,010 | ERROR | yfinance | 
-1 Failed download:
-2026-07-24 23:41:16,011 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
-2026-07-24 23:41:18,151 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
-2026-07-24 23:41:18,520 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
-2026-07-24 23:41:18,524 | ERROR | yfinance | 
-2 Failed downloads:
-2026-07-24 23:41:18,525 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
-2026-07-24 23:41:18,526 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
-2026-07-24 23:41:18,822 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
-2026-07-24 23:41:18,823 | ERROR | yfinance | 
-1 Failed download:
-2026-07-24 23:41:18,824 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
-2026-07-24 23:41:19,373 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
-2026-07-24 23:41:19,375 | ERROR | yfinance | 
-1 Failed download:
-2026-07-24 23:41:19,375 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
-2026-07-24 23:41:20,119 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
-2026-07-24 23:41:20,121 | ERROR | yfinance | 
-1 Failed download:
-2026-07-24 23:41:20,122 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
-2026-07-24 23:41:21,051 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
-2026-07-24 23:41:21,053 | ERROR | yfinance | 
-1 Failed download:
-2026-07-24 23:41:21,055 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-25 12:36:01,473 | ERROR | yfinance | ['TSN']: possibly delisted; no timezone found
