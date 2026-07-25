@@ -178,7 +178,7 @@ def _overview(data: dict[str, Any]) -> None:
             unsafe_allow_html=True,
         )
     with right:
-        st.plotly_chart(_gauge(_num(ships.get("percentOfNormal")), "TRANSITS VS NORMAL"), use_container_width=True, key="hmi_gauge")
+        st.plotly_chart(_gauge(_num(ships.get("percentOfNormal")), "TRANSITS VS NORMAL"), width="stretch", key="hmi_gauge")
 
     cols = st.columns(6)
     with cols[0]: _card("24H TRANSITS", _int(ships.get("last24h")), f"Normal {_int(ships.get('normalDaily'))}/day", True)
@@ -191,11 +191,11 @@ def _overview(data: dict[str, Any]) -> None:
     st.markdown("<div class='hmi-section'>MARKET PULSE</div>", unsafe_allow_html=True)
     c1, c2, c3 = st.columns([1, 1, .8])
     with c1:
-        st.plotly_chart(_line_chart(_records([]) or throughput.get("last7Days", []), "DAILY THROUGHPUT — LAST 7 OBSERVATIONS", " DWT", _num(throughput.get("averageDWT"))), use_container_width=True, key="hmi_dwt")
+        st.plotly_chart(_line_chart(_records([]) or throughput.get("last7Days", []), "DAILY THROUGHPUT — LAST 7 OBSERVATIONS", " DWT", _num(throughput.get("averageDWT"))), width="stretch", key="hmi_dwt")
     with c2:
-        st.plotly_chart(_line_chart(oil.get("sparkline", []), "BRENT — RECENT OBSERVATIONS", ""), use_container_width=True, key="hmi_brent")
+        st.plotly_chart(_line_chart(oil.get("sparkline", []), "BRENT — RECENT OBSERVATIONS", ""), width="stretch", key="hmi_brent")
     with c3:
-        st.plotly_chart(_line_chart(tanker.get("trend", []), f"{tanker.get('vesselType','VLCC')} {tanker.get('route','')} — SPOT RATE", f" {tanker.get('unit','WS')}"), use_container_width=True, key="hmi_vlcc")
+        st.plotly_chart(_line_chart(tanker.get("trend", []), f"{tanker.get('vesselType','VLCC')} {tanker.get('route','')} — SPOT RATE", f" {tanker.get('unit','WS')}"), width="stretch", key="hmi_vlcc")
 
     st.markdown("<div class='hmi-section'>VESSEL QUEUE COMPOSITION</div>", unsafe_allow_html=True)
     q1, q2, q3, q4 = st.columns(4)
@@ -255,9 +255,9 @@ def _trade_impact(data: dict[str, Any]) -> None:
             hovertemplate="<b>%{y}</b><br>Dependency: %{x:.0f}%<br>Severity: %{customdata[0]}<br>%{customdata[1]}<extra></extra>",
         ))
         fig.update_layout(template="plotly_dark", height=390, margin={"l": 15, "r": 30, "t": 10, "b": 20}, paper_bgcolor="#0b0f14", plot_bgcolor="#0b0f14", xaxis={"range": [0, 100], "ticksuffix": "%", "gridcolor": "#202832"}, yaxis={"categoryorder": "total ascending"})
-        st.plotly_chart(fig, use_container_width=True, key="hmi_regions")
+        st.plotly_chart(fig, width="stretch", key="hmi_regions")
         display = regions.rename(columns={"name":"REGION","severity":"SEVERITY","oilDependencyPercent":"OIL DEPENDENCY %","description":"INTELLIGENCE NOTE"})
-        st.dataframe(display, use_container_width=True, hide_index=True)
+        st.dataframe(display, width="stretch", hide_index=True)
 
     st.markdown("<div class='hmi-section'>LNG & SUPPLY CHAIN</div>", unsafe_allow_html=True)
     left, right = st.columns([1, 1])
@@ -303,7 +303,7 @@ def _routes(data: dict[str, Any]) -> None:
         hovertemplate="<b>%{x}</b><br>Cost: $%{y:,.0f}k<br>Extra days: %{customdata[0]:.0f}<br>%{customdata[1]}<extra></extra>",
     ))
     fig.update_layout(template="plotly_dark", height=390, margin={"l": 15, "r": 15, "t": 20, "b": 80}, paper_bgcolor="#0b0f14", plot_bgcolor="#0b0f14", yaxis_title="Additional cost (USD thousands)", yaxis={"gridcolor":"#202832"})
-    st.plotly_chart(fig, use_container_width=True, key="hmi_routes")
+    st.plotly_chart(fig, width="stretch", key="hmi_routes")
 
 
 def _timeline(data: dict[str, Any]) -> None:
@@ -357,7 +357,7 @@ def render_shipping() -> None:
     with st.sidebar:
         st.markdown("<div class='terminal-subheader'>HORMUZ FEED</div>", unsafe_allow_html=True)
         uploaded = st.file_uploader("Optional API snapshot", type=["json"], help="Upload a saved /api/dashboard response for offline use.")
-        if st.button("REFRESH LIVE FEED", use_container_width=True):
+        if st.button("REFRESH LIVE FEED", width="stretch"):
             _live_snapshot.clear()
             st.rerun()
 

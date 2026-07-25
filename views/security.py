@@ -89,7 +89,7 @@ def render_summary_table(summaries: Dict[str, TimeframeResult]) -> None:
                 "FLESSO": item.turn,
             }
         )
-    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
 
 def render_security_report() -> None:
     st.markdown("<div class='terminal-header'>SECURITY REPORT // CYCLICAL ANALYSIS</div>", unsafe_allow_html=True)
@@ -100,7 +100,7 @@ def render_security_report() -> None:
     period = controls[1].selectbox("Storico", ["max", "20y", "15y", "10y"], index=0)
     chart_years = controls[2].slider("Anni grafico", 1, 15, 5)
     controls[3].markdown("<br>", unsafe_allow_html=True)
-    controls[3].button("GENERATE REPORT", type="primary", use_container_width=True)
+    controls[3].button("GENERATE REPORT", type="primary", width="stretch")
 
     if not ticker:
         st.info("Inserisci un ticker.")
@@ -186,7 +186,7 @@ def render_security_report() -> None:
                     "WEEKLY": event.weekly_turn,
                     "WEEKLY CM": round(event.weekly_composite, 2),
                 })
-            st.dataframe(pd.DataFrame(history_rows), use_container_width=True, hide_index=True)
+            st.dataframe(pd.DataFrame(history_rows), width="stretch", hide_index=True)
 
     st.markdown("<div class='terminal-subheader'>ANALYST COMMENT</div>", unsafe_allow_html=True)
     st.markdown(f"<div class='report-box'>{report.replace(chr(10), '<br>')}</div>", unsafe_allow_html=True)
@@ -208,7 +208,7 @@ def render_security_report() -> None:
             "PHASE START": state.phase_start.strftime("%d/%m/%Y"),
             "EXCESS": state.excess,
         })
-    st.dataframe(pd.DataFrame(phase_rows), use_container_width=True, hide_index=True)
+    st.dataframe(pd.DataFrame(phase_rows), width="stretch", hide_index=True)
 
     hierarchy_cols = st.columns(3)
     hierarchy_cols[0].metric("ALIGNMENT", hierarchy.alignment)
@@ -234,20 +234,20 @@ def render_security_report() -> None:
             }
             for item in methodology_coverage()
         ]
-        st.dataframe(pd.DataFrame(coverage_rows), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(coverage_rows), width="stretch", hide_index=True)
 
     tabs = st.tabs(["PRICE", "WEEKLY CM", "MONTHLY CM", "QUARTERLY CM"])
     with tabs[0]:
-        st.plotly_chart(create_price_chart(daily_raw, ticker, chart_years), use_container_width=True)
+        st.plotly_chart(create_price_chart(daily_raw, ticker, chart_years), width="stretch")
     with tabs[1]:
         if "WEEKLY" in frames:
-            st.plotly_chart(create_composite_chart(frames["WEEKLY"], ticker, "WEEKLY"), use_container_width=True)
+            st.plotly_chart(create_composite_chart(frames["WEEKLY"], ticker, "WEEKLY"), width="stretch")
     with tabs[2]:
         if "MONTHLY" in frames:
-            st.plotly_chart(create_composite_chart(frames["MONTHLY"], ticker, "MONTHLY"), use_container_width=True)
+            st.plotly_chart(create_composite_chart(frames["MONTHLY"], ticker, "MONTHLY"), width="stretch")
     with tabs[3]:
         if "QUARTERLY" in frames:
-            st.plotly_chart(create_composite_chart(frames["QUARTERLY"], ticker, "QUARTERLY"), use_container_width=True)
+            st.plotly_chart(create_composite_chart(frames["QUARTERLY"], ticker, "QUARTERLY"), width="stretch")
 
     if errors:
         with st.expander("TIMEFRAME NON DISPONIBILI"):

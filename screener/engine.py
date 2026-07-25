@@ -27,6 +27,15 @@ PERFORMANCE_WINDOWS: dict[str, tuple[str, int]] = {
     "1 YEAR": ("1Y %", 252),
 }
 
+
+RELATIVE_STRENGTH_WINDOWS: dict[str, tuple[str, int]] = {
+    "1 WEEK": ("RS 1W %", 5),
+    "1 MONTH": ("RS 1M %", 21),
+    "3 MONTHS": ("RS 3M %", 63),
+    "6 MONTHS": ("RS 6M %", 126),
+    "1 YEAR": ("RS 1Y %", 252),
+}
+
 ACTION_ORDER: dict[str, int] = {
     "BUY": 0,
     "TAKE PROFIT": 1,
@@ -100,6 +109,40 @@ def _return(series: pd.Series, periods: int) -> float:
     return float((clean.iloc[-1] / clean.iloc[-periods - 1] - 1.0) * 100.0)
 
 
+def _relative_return(stock: pd.Series, benchmark: pd.Series, periods: int) -> float:
+    aligned = pd.concat([stock.rename("stock"), benchmark.rename("benchmark")], axis=1).dropna()
+    if len(aligned) <= periods:
+        return np.nan
+    stock_return = aligned["stock"].iloc[-1] / aligned["stock"].iloc[-periods - 1] - 1.0
+    benchmark_return = aligned["benchmark"].iloc[-1] / aligned["benchmark"].iloc[-periods - 1] - 1.0
+    return float((stock_return - benchmark_return) * 100.0)
+
+
+def _relative_ratio_index(stock: pd.Series, benchmark: pd.Series, periods: int = 252) -> float:
+    aligned = pd.concat([stock.rename("stock"), benchmark.rename("benchmark")], axis=1).dropna()
+    if len(aligned) <= periods:
+        return np.nan
+    window = aligned.iloc[-(periods + 1):]
+    ratio = window["stock"] / window["benchmark"]
+    base = ratio.iloc[0]
+    if not np.isfinite(base) or base == 0:
+        return np.nan
+    return float(ratio.iloc[-1] / base * 100.0)
+
+
+def build_relative_strength_ranking(rows: pd.DataFrame, relative_column: str) -> pd.DataFrame:
+    """Rank securities by excess adjusted-price return versus the selected index benchmark."""
+    if rows.empty or relative_column not in rows.columns:
+        return pd.DataFrame()
+    clean = rows.dropna(subset=[relative_column]).copy()
+    if clean.empty:
+        return pd.DataFrame()
+    clean = clean.sort_values(relative_column, ascending=False, kind="stable").reset_index(drop=True)
+    clean.insert(0, "RS Rank", range(1, len(clean) + 1))
+    clean["RS Signal"] = np.where(clean[relative_column] > 0, "OUTPERFORM", np.where(clean[relative_column] < 0, "UNDERPERFORM", "IN LINE"))
+    return clean
+
+
 def _screening_status(action: str) -> str:
     mapping = {
         "BUY": "BUY",
@@ -147,8 +190,21 @@ def sort_by_methodology(rows: pd.DataFrame) -> pd.DataFrame:
     return ranked.reset_index(drop=True)
 
 
-def analyse_universe(constituents: pd.DataFrame, period: str = "max") -> ScreenerResult:
-    data = download_universe_ohlc(constituents["Ticker"].tolist(), period=period)
+def analyse_universe(
+    constituents: pd.DataFrame,
+    period: str = "max",
+    benchmark_ticker: str = "",
+) -> ScreenerResult:
+    requested_tickers = constituents["Ticker"].tolist()
+    if benchmark_ticker:
+        requested_tickers = requested_tickers + [benchmark_ticker]
+    data = download_universe_ohlc(requested_tickers, period=period)
+    benchmark_frame = data.get(benchmark_ticker) if benchmark_ticker else None
+    benchmark_close = (
+        benchmark_frame["Close"].dropna()
+        if benchmark_frame is not None and not benchmark_frame.empty
+        else pd.Series(dtype=float)
+    )
     rows: list[dict[str, Any]] = []
     failures: list[dict[str, str]] = []
 
@@ -164,18 +220,6 @@ def analyse_universe(constituents: pd.DataFrame, period: str = "max") -> Screene
             for timeframe, rule in (("WEEKLY", "W-FRI"), ("MONTHLY", "ME"), ("QUARTERLY", "QE")):
                 calculated = calculate_composite_momentum(resample_ohlc(frame, rule))
                 summaries[timeframe] = summarize_timeframe(timeframe, calculated)
-                resampled = resample_ohlc(frame, rule)
-                print(
-                    ticker,
-                    timeframe,
-                    "daily rows:", len(frame),
-                    "resampled rows:", len(resampled),
-                    "calculated rows:", len(calculated),
-                    "valid composite:",
-                    calculated["Composite"].notna().sum()
-                    if "Composite" in calculated.columns
-                    else "column missing",
-                )
             q = summaries["QUARTERLY"]
             m = summaries["MONTHLY"]
             w = summaries["WEEKLY"]
@@ -195,6 +239,13 @@ def analyse_universe(constituents: pd.DataFrame, period: str = "max") -> Screene
                     "1W %": _return(close, 5),
                     "1M %": _return(close, 21),
                     "1Y %": _return(close, 252),
+                    "RS 1W %": _relative_return(close, benchmark_close, 5),
+                    "RS 1M %": _relative_return(close, benchmark_close, 21),
+                    "RS 3M %": _relative_return(close, benchmark_close, 63),
+                    "RS 6M %": _relative_return(close, benchmark_close, 126),
+                    "RS 1Y %": _relative_return(close, benchmark_close, 252),
+                    "RS Ratio 1Y": _relative_ratio_index(close, benchmark_close, 252),
+                    "Benchmark": benchmark_ticker or "N/A",
                     "Quarterly CM": q.composite,
                     "Monthly CM": m.composite,
                     "Weekly CM": w.composite,

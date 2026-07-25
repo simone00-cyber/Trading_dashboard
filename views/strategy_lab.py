@@ -69,7 +69,7 @@ def render_strategy_lab() -> None:
             format="%.0f%%",
             help="This percentage is not published by the source and is used only as a research parameter.",
         )
-    st.button("RUN BACKTEST", type="primary", use_container_width=True)
+    st.button("RUN BACKTEST", type="primary", width="stretch")
 
     try:
         with st.spinner(f"Reconstructing completed-bar signals for {ticker}..."):
@@ -96,8 +96,8 @@ def render_strategy_lab() -> None:
     research = build_research_report(result.trades, result.weekly)
     tabs = st.tabs(["EQUITY LINE", "SIGNAL HISTORY", "TRADES", "DIAGNOSTICS", "AUDIT", "RESEARCH", "METHODOLOGY", "MATRIX EXPLORER"])
     with tabs[0]:
-        st.plotly_chart(_equity_chart(result.weekly, ticker), use_container_width=True)
-        st.plotly_chart(_drawdown_chart(result.weekly, ticker), use_container_width=True)
+        st.plotly_chart(_equity_chart(result.weekly, ticker), width="stretch")
+        st.plotly_chart(_drawdown_chart(result.weekly, ticker), width="stretch")
         rows = [
             {"METRIC": "Total return", "VALUE": _format_pct(metrics.get("Total Return", 0.0))},
             {"METRIC": "CAGR", "VALUE": _format_pct(metrics.get("CAGR", 0.0))},
@@ -109,7 +109,7 @@ def render_strategy_lab() -> None:
             {"METRIC": "Average trade", "VALUE": _format_pct(metrics.get("Average Trade", 0.0))},
             {"METRIC": "Average bars held", "VALUE": f"{metrics.get('Average Bars Held', 0.0):.1f}"},
         ]
-        st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
 
     with tabs[1]:
         signal_rows = [{
@@ -118,7 +118,7 @@ def render_strategy_lab() -> None:
             "MONTHLY": s.monthly_direction, "WEEKLY TURN": s.weekly_turn,
             "WEEKLY PHASE": s.weekly_phase, "WEEKLY CM": round(s.weekly_composite, 2),
         } for s in reversed(result.signals)]
-        st.dataframe(pd.DataFrame(signal_rows), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(signal_rows), width="stretch", hide_index=True)
 
     with tabs[2]:
         trade_rows = [{
@@ -128,7 +128,7 @@ def render_strategy_lab() -> None:
             "RATING": "●" * t.entry_rating, "SIZE": f"{t.size:.0%}", "BARS": t.bars_held,
             "GROSS": _format_pct(t.gross_return), "NET": _format_pct(t.net_return),
         } for t in reversed(result.trades)]
-        st.dataframe(pd.DataFrame(trade_rows), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(trade_rows), width="stretch", hide_index=True)
 
     with tabs[3]:
         if result.diagnostics.empty:
@@ -140,7 +140,7 @@ def render_strategy_lab() -> None:
             diagnostic["GROSS RETURN"] = diagnostic["GROSS RETURN"].map(_format_pct)
             diagnostic["NET RETURN"] = diagnostic["NET RETURN"].map(_format_pct)
             diagnostic["ENTRY CM"] = diagnostic["ENTRY CM"].round(2)
-            st.dataframe(diagnostic, use_container_width=True, hide_index=True)
+            st.dataframe(diagnostic, width="stretch", hide_index=True)
             st.caption("These fields permit later grouping by rating, higher-timeframe alignment, weekly phase and Composite Momentum level without changing the execution rules.")
 
     with tabs[4]:
@@ -148,7 +148,7 @@ def render_strategy_lab() -> None:
         status = "PASS" if result.audit.passed else "FAIL"
         st.metric("CORE EXECUTION AUDIT", status)
         checks = pd.DataFrame(result.audit.checks)
-        st.dataframe(checks, use_container_width=True, hide_index=True)
+        st.dataframe(checks, width="stretch", hide_index=True)
 
         transitions = pd.DataFrame([{
             "DATE": row.date.strftime("%d/%m/%Y"),
@@ -163,7 +163,7 @@ def render_strategy_lab() -> None:
             "REASON": row.reason,
         } for row in reversed(result.audit.transitions)])
         st.markdown("#### VISUAL TRADE-ENGINE DEBUGGER")
-        st.dataframe(transitions, use_container_width=True, hide_index=True)
+        st.dataframe(transitions, width="stretch", hide_index=True)
         st.caption("Every matrix event is shown, including TAKE PROFIT signals that occur while the strategy is already FLAT. Such events are retained for traceability but correctly do not create a trade exit.")
 
     with tabs[5]:
@@ -203,7 +203,7 @@ def render_strategy_lab() -> None:
                         name="Drawdown",
                     ))
                     fig.update_layout(title="TOP 10 DRAWDOWN EPISODES", xaxis_title="Maximum drawdown %", yaxis_title="Episode")
-                    st.plotly_chart(apply_terminal_layout(fig, 430), use_container_width=True)
+                    st.plotly_chart(apply_terminal_layout(fig, 430), width="stretch")
 
                     episode_view = episodes.head(20).copy()
                     for column in ["START", "TROUGH", "RECOVERY"]:
@@ -212,7 +212,7 @@ def render_strategy_lab() -> None:
                     episode_view["LOSING TRADE CONTRIBUTION"] = episode_view["LOSING TRADE CONTRIBUTION"].map(_format_pct)
                     st.dataframe(
                         episode_view[["RANK", "START", "TROUGH", "RECOVERY", "MAX DRAWDOWN", "WEEKS TO TROUGH", "TOTAL WEEKS", "OVERLAPPING TRADES", "DOMINANT LOSS SETUP"]],
-                        use_container_width=True, hide_index=True,
+                        width="stretch", hide_index=True,
                     )
 
                     st.markdown("##### EPISODE DRILL-DOWN")
@@ -234,7 +234,7 @@ def render_strategy_lab() -> None:
                             linked[column] = linked[column].map(_format_pct)
                         st.dataframe(
                             linked[["SIDE", "ENTRY DATE", "EXIT DATE", "SETUP", "ENTRY RATING", "ENTRY CM", "BARS", "NET RETURN", "PNL CONTRIBUTION", "MFE", "MAE", "EXIT REASON"]],
-                            use_container_width=True, hide_index=True,
+                            width="stretch", hide_index=True,
                         )
 
                     st.markdown("##### LOSS ATTRIBUTION")
@@ -263,12 +263,12 @@ def render_strategy_lab() -> None:
                             name="Loss share",
                         ))
                         fig.update_layout(title=f"GROSS LOSS CONTRIBUTION BY {attribution_choice.upper()}", xaxis_title="Share of total losing-trade contribution %", yaxis_title=group_column)
-                        st.plotly_chart(apply_terminal_layout(fig, 390), use_container_width=True)
+                        st.plotly_chart(apply_terminal_layout(fig, 390), width="stretch")
                         attribution["TOTAL_LOSS"] = attribution["TOTAL_LOSS"].map(lambda x: f"-{x * 100:.2f}%")
                         attribution["AVG_LOSS"] = attribution["AVG_LOSS"].map(lambda x: f"-{x * 100:.2f}%")
                         attribution["WORST_TRADE"] = attribution["WORST_TRADE"].map(_format_pct)
                         attribution["LOSS SHARE"] = attribution["LOSS SHARE"].map(lambda x: f"{x:.1%}")
-                        st.dataframe(attribution, use_container_width=True, hide_index=True)
+                        st.dataframe(attribution, width="stretch", hide_index=True)
                         st.caption("Loss share is based on the absolute contribution of losing trade legs. It explains where realised trade losses are concentrated; it is not a causal model and does not include mark-to-market losses from still-open positions.")
 
             with research_tabs[1]:
@@ -278,7 +278,7 @@ def render_strategy_lab() -> None:
                 setup["MEDIAN RETURN"] = setup["MEDIAN RETURN"].map(_format_pct)
                 setup["PROFIT FACTOR"] = setup["PROFIT FACTOR"].replace(float("inf"), pd.NA).round(2)
                 setup["SCORE"] = setup["RESEARCH SCORE"].map(lambda x: "★" * int(x) + "☆" * (5 - int(x)))
-                st.dataframe(setup.drop(columns=["RESEARCH SCORE"]), use_container_width=True, hide_index=True)
+                st.dataframe(setup.drop(columns=["RESEARCH SCORE"]), width="stretch", hide_index=True)
                 st.caption("The score rewards sample size, positive expectancy and profit factor. It does not create or modify signals.")
 
             with research_tabs[2]:
@@ -288,7 +288,7 @@ def render_strategy_lab() -> None:
                 cm["MEDIAN RETURN"] = cm["MEDIAN RETURN"].map(_format_pct)
                 cm["PROFIT FACTOR"] = cm["PROFIT FACTOR"].replace(float("inf"), pd.NA).round(2)
                 cm["SCORE"] = cm["RESEARCH SCORE"].map(lambda x: "★" * int(x) + "☆" * (5 - int(x)))
-                st.dataframe(cm.drop(columns=["RESEARCH SCORE"]), use_container_width=True, hide_index=True)
+                st.dataframe(cm.drop(columns=["RESEARCH SCORE"]), width="stretch", hide_index=True)
 
             with research_tabs[3]:
                 metric = st.radio("Heat-map metric", ["Average return", "Win rate", "Trade count"], horizontal=True)
@@ -302,8 +302,8 @@ def render_strategy_lab() -> None:
                         text = text + "%"
                     fig = go.Figure(go.Heatmap(z=values.values, x=values.columns, y=values.index, text=text.values, texttemplate="%{text}", colorbar_title=metric))
                     fig.update_layout(title=f"QUARTERLY DIRECTION × WEEKLY ENTRY PHASE // {metric.upper()}", xaxis_title="Weekly phase", yaxis_title="Quarterly direction")
-                    st.plotly_chart(apply_terminal_layout(fig, 430), use_container_width=True)
-                    st.dataframe(matrix, use_container_width=True)
+                    st.plotly_chart(apply_terminal_layout(fig, 430), width="stretch")
+                    st.dataframe(matrix, width="stretch")
 
             with research_tabs[4]:
                 hold = research.holding_summary.copy()
@@ -312,32 +312,32 @@ def render_strategy_lab() -> None:
                 hold["MEDIAN RETURN"] = hold["MEDIAN RETURN"].map(_format_pct)
                 hold["PROFIT FACTOR"] = hold["PROFIT FACTOR"].replace(float("inf"), pd.NA).round(2)
                 hold["SCORE"] = hold["RESEARCH SCORE"].map(lambda x: "★" * int(x) + "☆" * (5 - int(x)))
-                st.dataframe(hold.drop(columns=["RESEARCH SCORE"]), use_container_width=True, hide_index=True)
+                st.dataframe(hold.drop(columns=["RESEARCH SCORE"]), width="stretch", hide_index=True)
 
                 enriched = research.enriched_trades.copy()
                 fig = go.Figure()
                 fig.add_trace(go.Scatter(x=enriched["BARS"], y=enriched["NET RETURN"] * 100.0, mode="markers", name="Trades", text=enriched["SIDE"]))
                 fig.update_layout(title="HOLDING PERIOD VS NET RETURN", xaxis_title="Weekly bars", yaxis_title="Net return %")
-                st.plotly_chart(apply_terminal_layout(fig, 390), use_container_width=True)
+                st.plotly_chart(apply_terminal_layout(fig, 390), width="stretch")
 
                 excursions = enriched[["SIDE", "ENTRY DATE", "EXIT DATE", "NET RETURN", "MFE", "MAE", "BARS"]].copy()
                 for column in ["NET RETURN", "MFE", "MAE"]:
                     excursions[column] = excursions[column].map(_format_pct)
                 excursions["ENTRY DATE"] = pd.to_datetime(excursions["ENTRY DATE"]).dt.strftime("%d/%m/%Y")
                 excursions["EXIT DATE"] = pd.to_datetime(excursions["EXIT DATE"]).dt.strftime("%d/%m/%Y")
-                st.dataframe(excursions.sort_values("ENTRY DATE", ascending=False), use_container_width=True, hide_index=True)
+                st.dataframe(excursions.sort_values("ENTRY DATE", ascending=False), width="stretch", hide_index=True)
                 st.caption("MFE and MAE are calculated from weekly closes between entry and exit; intraperiod highs and lows are not used.")
 
             with research_tabs[5]:
                 hypotheses = research.hypotheses.copy()
                 for column in ["TEST AVG", "CONTROL AVG", "DIFFERENCE"]:
                     hypotheses[column] = hypotheses[column].map(lambda x: _format_pct(x) if pd.notna(x) else "N/A")
-                st.dataframe(hypotheses, use_container_width=True, hide_index=True)
+                st.dataframe(hypotheses, width="stretch", hide_index=True)
                 st.caption("A hypothesis is labelled SUPPORTED only when both groups contain at least 10 observations and the test group's average return is higher. This is descriptive comparison, not a statistical significance test.")
 
     with tabs[6]:
         st.markdown("### PUBLIC FORMULAS USED BY THE ENGINE")
-        st.dataframe(pd.DataFrame(FORMULA_REGISTRY), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame(FORMULA_REGISTRY), width="stretch", hide_index=True)
         st.markdown("""
 **Implemented and testable**
 
@@ -396,7 +396,7 @@ def render_strategy_lab() -> None:
             display["COMPOSITE"] = display["COMPOSITE"].round(2)
             display["RATING"] = display["RATING"].map(lambda x: "●" * int(x) if int(x) > 0 else "—")
             display["NEW EVENT"] = display["NEW EVENT"].map(lambda x: "YES" if x else "NO")
-            st.dataframe(display, use_container_width=True, hide_index=True)
+            st.dataframe(display, width="stretch", hide_index=True)
 
             st.markdown("#### LATEST DECISION // WHY")
             st.code(str(latest["WHY"]), language=None)
@@ -406,6 +406,6 @@ def render_strategy_lab() -> None:
             state_counts = matrix["INSTRUCTION"].value_counts().rename_axis("INSTRUCTION").reset_index(name="WEEKLY STATES")
             counts = transition_counts.merge(state_counts, on="INSTRUCTION", how="outer").fillna(0)
             st.markdown("#### STATE FREQUENCY VS NEW EVENTS")
-            st.dataframe(counts, use_container_width=True, hide_index=True)
+            st.dataframe(counts, width="stretch", hide_index=True)
             st.caption("This distinction prevents a persistent TAKE PROFIT state from being counted as a fresh execution instruction every week.")
 

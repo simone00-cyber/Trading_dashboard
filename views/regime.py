@@ -69,7 +69,7 @@ def render_market_regime() -> None:
                 "DELTA": "{:+.2f}",
             }
         ),
-        use_container_width=True,
+        width="stretch",
         hide_index=True,
     )
 
@@ -86,7 +86,7 @@ def render_market_regime() -> None:
             options=["STRATEGIC", "TACTICAL", "DAILY"],
             format_func=lambda key: results[key].title,
         )
-        st.plotly_chart(create_regime_radar(results[selected_layer]), use_container_width=True)
+        st.plotly_chart(create_regime_radar(results[selected_layer]), width="stretch")
 
     with right:
         st.markdown("<div class='terminal-subheader'>PILLAR DIAGNOSTICS</div>", unsafe_allow_html=True)
@@ -117,7 +117,7 @@ def render_market_regime() -> None:
                 subset=["STATO"],
             )
         )
-        st.dataframe(styled, use_container_width=True, hide_index=True, height=470)
+        st.dataframe(styled, width="stretch", hide_index=True, height=470)
 
     st.markdown("<div class='terminal-subheader'>MODEL LOGIC</div>", unsafe_allow_html=True)
     st.markdown(

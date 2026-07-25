@@ -10,6 +10,7 @@ from views.security import render_security_report
 from views.methodology import render_methodology
 from views.strategy_lab import render_strategy_lab
 from views.screener import render_market_screener
+from views.technical import render_technical_analysis
 
 configure_logging()
 
@@ -19,9 +20,9 @@ render_top_bar()
 
 with st.sidebar:
     st.markdown("<div class='terminal-header'>NAVIGATION</div>", unsafe_allow_html=True)
-    page = st.radio("Page", ["GLOBAL OVERVIEW", "GLOBAL MACRO", "MARITIME INTELLIGENCE", "MARKET REGIME", "MARKET SCREENER", "SECURITY REPORT", "STRATEGY LAB", "METHODOLOGY"], label_visibility="collapsed")
+    page = st.radio("Page", ["GLOBAL OVERVIEW", "GLOBAL MACRO", "MARITIME INTELLIGENCE", "MARKET REGIME", "MARKET SCREENER", "TECHNICAL ANALYSIS", "SECURITY REPORT", "STRATEGY LAB", "METHODOLOGY"], label_visibility="collapsed")
     st.divider()
-    if st.button("CLEAR DATA CACHE", use_container_width=True):
+    if st.button("CLEAR DATA CACHE", width="stretch"):
         st.cache_data.clear()
         st.rerun()
 
@@ -31,6 +32,7 @@ PAGES = {
     "MARITIME INTELLIGENCE": render_shipping,
     "MARKET REGIME": render_market_regime,
     "MARKET SCREENER": render_market_screener,
+    "TECHNICAL ANALYSIS": render_technical_analysis,
     "SECURITY REPORT": render_security_report,
     "STRATEGY LAB": render_strategy_lab,
     "METHODOLOGY": render_methodology,

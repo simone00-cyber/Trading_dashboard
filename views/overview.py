@@ -47,15 +47,15 @@ def render_global_overview() -> None:
             chart = normalized_frame(renamed[selected])
             st.plotly_chart(
                 create_line_chart(chart, "GLOBAL EQUITY // BASE 100", "Base 100", 510),
-                use_container_width=True,
+                width="stretch",
             )
 
     with right:
         st.markdown("<div class='terminal-subheader'>1D PERFORMANCE</div>", unsafe_allow_html=True)
         st.plotly_chart(
             create_bar_chart(table, "1D %", "LEADERS / LAGGARDS"),
-            use_container_width=True,
+            width="stretch",
         )
 
     st.markdown("<div class='terminal-subheader'>WORLD INDEX TABLE</div>", unsafe_allow_html=True)
-    st.dataframe(style_market_table(table), use_container_width=True, hide_index=True, height=570)
+    st.dataframe(style_market_table(table), width="stretch", hide_index=True, height=570)

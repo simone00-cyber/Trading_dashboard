@@ -15,6 +15,7 @@ class UniverseSpec:
     suffix: str = ""
     dot_to_dash: bool = False
     parser: Callable[[list[pd.DataFrame], "UniverseSpec"], pd.DataFrame] | None = None
+    benchmark_ticker: str = ""
 
 
 def _clean_columns(frame: pd.DataFrame) -> pd.DataFrame:
@@ -132,24 +133,28 @@ UNIVERSES: dict[str, UniverseSpec] = {
         source_url="https://en.wikipedia.org/wiki/Nasdaq-100",
         dot_to_dash=True,
         parser=_parse_nasdaq100,
+        benchmark_ticker="^NDX",
     ),
     "S&P 500": UniverseSpec(
         name="S&P 500",
         source_url="https://en.wikipedia.org/wiki/List_of_S%26P_500_companies",
         dot_to_dash=True,
         parser=_parse_sp500,
+        benchmark_ticker="^GSPC",
     ),
     "FTSE MIB": UniverseSpec(
         name="FTSE MIB",
         source_url="https://en.wikipedia.org/wiki/FTSE_MIB",
         suffix=".MI",
         parser=_parse_ftse_mib,
+        benchmark_ticker="FTSEMIB.MI",
     ),
     "DAX 40": UniverseSpec(
         name="DAX 40",
         source_url="https://en.wikipedia.org/wiki/DAX",
         suffix=".DE",
         parser=_parse_dax,
+        benchmark_ticker="^GDAXI",
     ),
 }
 
