@@ -13,3 +13,61 @@
 2026-07-25 12:36:01,473 | ERROR | yfinance | 
 1 Failed download:
 2026-07-25 12:36:01,473 | ERROR | yfinance | ['TSN']: possibly delisted; no timezone found
+2026-07-26 13:58:28,409 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-26 13:58:28,725 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-26 13:58:29,068 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-26 13:58:29,926 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-26 13:58:30,201 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-26 13:58:30,896 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-26 13:58:31,209 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-26 13:58:32,610 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-26 13:58:33,519 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-26 13:58:33,523 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-26 13:58:33,524 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-26 13:58:33,525 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-26 13:58:33,859 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-26 13:58:33,861 | ERROR | yfinance | 
+1 Failed download:
+2026-07-26 13:58:33,862 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-26 13:58:34,482 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-26 13:58:34,484 | ERROR | yfinance | 
+1 Failed download:
+2026-07-26 13:58:34,486 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-26 13:58:35,269 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-26 13:58:35,867 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-26 13:58:35,869 | ERROR | yfinance | 
+1 Failed download:
+2026-07-26 13:58:35,870 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-26 13:58:43,130 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-26 13:58:43,132 | ERROR | yfinance | 
+1 Failed download:
+2026-07-26 13:58:43,133 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-26 13:58:47,640 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-26 13:58:48,033 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-26 13:58:48,612 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-26 13:58:48,612 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-26 13:58:48,613 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-26 13:58:48,890 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-26 13:58:48,891 | ERROR | yfinance | 
+1 Failed download:
+2026-07-26 13:58:48,892 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-26 13:58:49,523 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-26 13:58:49,524 | ERROR | yfinance | 
+1 Failed download:
+2026-07-26 13:58:49,525 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-26 13:58:50,396 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-26 13:58:50,398 | ERROR | yfinance | 
+1 Failed download:
+2026-07-26 13:58:50,399 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-26 13:58:51,430 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-26 13:58:51,431 | ERROR | yfinance | 
+1 Failed download:
+2026-07-26 13:58:51,432 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-26 13:59:28,650 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-26 13:59:29,034 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-26 13:59:29,393 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-26 13:59:30,037 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-26 13:59:30,304 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-26 13:59:31,015 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y

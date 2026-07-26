@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -114,16 +115,28 @@ def _initial_visible_bars(timeframe: str) -> int:
 
 
 def _price_rsi_chart(ticker: str, frame: pd.DataFrame, settings: TechnicalSettings, snapshot) -> go.Figure:
-    """Interactive price/RSI chart with a shared, synchronized time axis."""
+    """Compact synchronized price, volume and RSI workspace."""
     display = _chart_display_frame(frame, settings)
     rsi = calculate_rsi(display["Close"], settings.rsi_period).reindex(display.index)
+
+    volume = pd.Series(0.0, index=display.index)
+    if "Volume" in display.columns:
+        volume = (
+            pd.to_numeric(display["Volume"], errors="coerce")
+            .replace([np.inf, -np.inf], np.nan)
+            .fillna(0.0)
+            .clip(lower=0.0)
+        )
+    has_volume = bool(volume.gt(0).any())
+
     fig = make_subplots(
-        rows=2,
+        rows=3,
         cols=1,
         shared_xaxes=True,
-        vertical_spacing=0.025,
-        row_heights=[0.72, 0.28],
+        vertical_spacing=0.012,
+        row_heights=[0.69, 0.11, 0.20],
     )
+
     fig.add_trace(
         go.Candlestick(
             x=display.index,
@@ -132,11 +145,18 @@ def _price_rsi_chart(ticker: str, frame: pd.DataFrame, settings: TechnicalSettin
             low=display["Low"],
             close=display["Close"],
             name=ticker,
+            increasing_line_color="#18d47b",
+            decreasing_line_color="#ff4f5e",
+            increasing_fillcolor="#18d47b",
+            decreasing_fillcolor="#ff4f5e",
+            whiskerwidth=0.22,
         ),
         row=1,
         col=1,
     )
-    for period in settings.ma_periods:
+
+    ma_colors = ["#ff5b49", "#00d6b4", "#a95cff", "#f5b642", "#3d8bfd", "#f472b6", "#94a3b8", "#22c55e"]
+    for index, period in enumerate(settings.ma_periods):
         column = f"MA{period}"
         if column in display:
             fig.add_trace(
@@ -145,68 +165,312 @@ def _price_rsi_chart(ticker: str, frame: pd.DataFrame, settings: TechnicalSettin
                     y=display[column],
                     mode="lines",
                     name=column,
-                    line={"width": 1.35},
+                    line={"width": 1.45, "color": ma_colors[index % len(ma_colors)]},
+                    hovertemplate=f"{column}: %{{y:.2f}}<extra></extra>",
                 ),
                 row=1,
                 col=1,
             )
-    if snapshot.support_low is not None and snapshot.support_high is not None:
-        fig.add_hrect(
-            y0=snapshot.support_low,
-            y1=snapshot.support_high,
-            opacity=0.16,
-            line_width=1,
-            annotation_text="SUPPORT",
-            row=1,
+
+    supports = snapshot.diagnostics.get("supports", []) or []
+    resistances = snapshot.diagnostics.get("resistances", []) or []
+
+    def _valid_zone(zone: dict) -> bool:
+        try:
+            low = float(zone["low"])
+            high = float(zone["high"])
+            return np.isfinite(low) and np.isfinite(high) and 0 < low < high
+        except (KeyError, TypeError, ValueError):
+            return False
+
+    def _add_zone(zone: dict, role: str, nearest: bool) -> None:
+        if not _valid_zone(zone):
+            return
+        origin = pd.to_datetime(zone.get("first_date", display.index[0]), errors="coerce")
+        if pd.isna(origin):
+            origin = display.index[0]
+        color = ("34,197,94" if role == "support" else "239,68,68")
+        fig.add_shape(
+            type="rect",
+            xref="x",
+            yref="y",
+            x0=max(origin, display.index[0]),
+            x1=display.index[-1],
+            y0=float(zone["low"]),
+            y1=float(zone["high"]),
+            fillcolor=f"rgba({color},{0.28 if nearest else 0.13})",
+            line={"color": f"rgba({color},{0.92 if nearest else 0.42})", "width": 1.25 if nearest else 0.65},
+            layer="below",
+        )
+
+    for index, zone in enumerate([z for z in supports if _valid_zone(z)][:4]):
+        _add_zone(zone, "support", index == 0)
+    for index, zone in enumerate([z for z in resistances if _valid_zone(z)][:4]):
+        _add_zone(zone, "resistance", index == 0)
+
+    if has_volume:
+        volume_colors = np.where(
+            display["Close"].to_numpy() >= display["Open"].to_numpy(),
+            "rgba(24,212,123,0.82)",
+            "rgba(255,79,94,0.82)",
+        )
+        fig.add_trace(
+            go.Bar(
+                x=display.index,
+                y=volume,
+                name="Volume",
+                marker={"color": volume_colors, "line": {"width": 0}},
+                opacity=0.92,
+                hovertemplate="Volume: %{y:,.0f}<extra></extra>",
+                showlegend=False,
+            ),
+            row=2,
             col=1,
         )
-    if snapshot.resistance_low is not None and snapshot.resistance_high is not None:
-        fig.add_hrect(
-            y0=snapshot.resistance_low,
-            y1=snapshot.resistance_high,
-            opacity=0.16,
-            line_width=1,
-            annotation_text="RESISTANCE",
-            row=1,
-            col=1,
+    else:
+        fig.add_annotation(
+            text="Volume unavailable",
+            xref="x2 domain",
+            yref="y2 domain",
+            x=0.01,
+            y=0.52,
+            showarrow=False,
+            font={"size": 10, "color": "#818a99"},
         )
+
     fig.add_trace(
         go.Scatter(
             x=display.index,
             y=rsi,
             mode="lines",
             name=f"RSI({settings.rsi_period})",
-            line={"width": 1.6},
+            line={"width": 1.45, "color": "#338dff"},
+            hovertemplate=f"RSI({settings.rsi_period}): %{{y:.1f}}<extra></extra>",
+            showlegend=False,
         ),
-        row=2,
+        row=3,
         col=1,
     )
-    fig.add_hline(y=70, line_dash="dash", annotation_text="70", row=2, col=1)
-    fig.add_hline(y=30, line_dash="dash", annotation_text="30", row=2, col=1)
-    fig.update_yaxes(range=[0, 100], title_text=f"RSI({settings.rsi_period})", row=2, col=1)
+    fig.add_hrect(y0=70, y1=100, fillcolor="rgba(239,68,68,0.075)", line_width=0, row=3, col=1)
+    fig.add_hrect(y0=0, y1=30, fillcolor="rgba(51,141,255,0.075)", line_width=0, row=3, col=1)
+    fig.add_hline(y=70, line_dash="dash", line_color="rgba(148,163,184,0.62)", row=3, col=1)
+    fig.add_hline(y=30, line_dash="dash", line_color="rgba(148,163,184,0.62)", row=3, col=1)
 
-    # Show a useful recent window initially while retaining the entire history.
     visible_bars = _initial_visible_bars(settings.timeframe)
-    if len(display) > visible_bars:
-        initial_range = [display.index[-visible_bars], display.index[-1]]
-        fig.update_xaxes(range=initial_range, row=1, col=1)
-        fig.update_xaxes(range=initial_range, row=2, col=1)
+    visible = display.tail(visible_bars) if len(display) > visible_bars else display
+    initial_range = [visible.index[0], visible.index[-1]]
 
-    fig.update_xaxes(matches="x", fixedrange=False)
+    price_low = float(visible["Low"].min())
+    price_high = float(visible["High"].max())
+    zone_edges: list[float] = []
+    for zone in supports[:4] + resistances[:4]:
+        if _valid_zone(zone):
+            low, high = float(zone["low"]), float(zone["high"])
+            if low <= price_high * 1.15 and high >= price_low * 0.85:
+                zone_edges.extend([low, high])
+    if zone_edges:
+        price_low = min(price_low, min(zone_edges))
+        price_high = max(price_high, max(zone_edges))
+    padding = max((price_high - price_low) * 0.055, price_high * 0.01)
+
+    fig.update_yaxes(
+        range=[max(0.01, price_low - padding), price_high + padding],
+        fixedrange=False,
+        zeroline=False,
+        tickformat=",.2f",
+        row=1,
+        col=1,
+    )
+
+    if has_volume:
+        visible_volume = volume.reindex(visible.index)
+        positive = visible_volume[visible_volume > 0]
+        # Robust scaling prevents one split/data anomaly from flattening every bar.
+        upper = float(positive.quantile(0.985) * 1.18) if not positive.empty else 1.0
+        upper = max(upper, float(positive.median() * 2.0) if not positive.empty else 1.0)
+        fig.update_yaxes(
+            range=[0, upper],
+            fixedrange=False,
+            showgrid=False,
+            zeroline=False,
+            title_text="VOL",
+            tickformat="~s",
+            nticks=3,
+            row=2,
+            col=1,
+        )
+    else:
+        fig.update_yaxes(range=[0, 1], showticklabels=False, showgrid=False, row=2, col=1)
+
+    fig.update_yaxes(
+        range=[0, 100],
+        fixedrange=False,
+        zeroline=False,
+        title_text=f"RSI({settings.rsi_period})",
+        dtick=20,
+        row=3,
+        col=1,
+    )
+
+    for row in (1, 2, 3):
+        fig.update_xaxes(
+            range=initial_range,
+            fixedrange=False,
+            showspikes=True,
+            spikemode="across",
+            spikesnap="cursor",
+            spikecolor="rgba(148,163,184,0.42)",
+            spikethickness=1,
+            row=row,
+            col=1,
+        )
+    fig.update_xaxes(matches="x", showticklabels=False, row=1, col=1)
+    fig.update_xaxes(matches="x", showticklabels=False, row=2, col=1)
+    fig.update_xaxes(matches="x", showticklabels=True, row=3, col=1)
     fig.update_xaxes(rangeslider_visible=False, row=1, col=1)
-    fig.update_xaxes(rangeslider_visible=True, rangeslider_thickness=0.07, row=2, col=1)
+    fig.update_xaxes(rangeslider_visible=False, row=2, col=1)
+    fig.update_xaxes(rangeslider_visible=True, rangeslider_thickness=0.035, row=3, col=1)
+
     fig.update_layout(
         template="plotly_dark",
-        height=860,
-        margin=dict(l=10, r=10, t=48, b=10),
-        title=f"{ticker} // {settings.timeframe} PRICE, LEVELS, MOVING AVERAGES & RSI",
-        legend={"orientation": "h", "y": 1.02, "x": 0},
+        height=720,
+        margin=dict(l=8, r=8, t=50, b=4),
+        title={"text": f"{ticker} // {settings.timeframe} TECHNICAL WORKSPACE", "x": 0.0, "xanchor": "left"},
+        legend={"orientation": "h", "y": 1.025, "x": 0, "font": {"size": 10}, "bgcolor": "rgba(0,0,0,0)"},
         hovermode="x unified",
         dragmode="pan",
         uirevision=f"technical-{ticker}-{settings.timeframe}",
+        bargap=0.06,
+        plot_bgcolor="#05070a",
+        paper_bgcolor="#05070a",
+        hoverlabel={"bgcolor": "#10141a", "bordercolor": "#303846", "font": {"color": "#f5f7fa"}},
     )
     return fig
 
+
+def _technical_event_history(frame: pd.DataFrame, settings: TechnicalSettings, snapshot) -> list[dict[str, object]]:
+    """Build a dated, deterministic event timeline from calculated technical data."""
+    events: list[dict[str, object]] = []
+    frame = frame.sort_index()
+    last_date = frame.index[-1]
+
+    def add(date, label: str, category: str, detail: str = "") -> None:
+        parsed = pd.to_datetime(date, errors="coerce")
+        if pd.isna(parsed):
+            parsed = last_date
+        events.append({"date": parsed, "label": label, "category": category, "detail": detail})
+
+    for zone in (snapshot.diagnostics.get("supports", []) or []) + (snapshot.diagnostics.get("resistances", []) or []):
+        role = str(zone.get("role", zone.get("initial_role", "LEVEL"))).title()
+        if zone.get("break_date") is not None:
+            add(zone["break_date"], f"{role} break", "LEVEL", f"Zone {float(zone['low']):.2f}-{float(zone['high']):.2f}")
+        if zone.get("retest_date") is not None:
+            add(zone["retest_date"], f"{role} retest / role flip", "LEVEL", f"Zone {float(zone['low']):.2f}-{float(zone['high']):.2f}")
+
+    close = frame["Close"].astype(float)
+    periods = tuple(sorted(settings.ma_periods))
+    for fast, slow in zip(periods, periods[1:]):
+        fast_ma = close.rolling(fast, min_periods=fast).mean()
+        slow_ma = close.rolling(slow, min_periods=slow).mean()
+        spread = fast_ma - slow_ma
+        bullish = (spread.shift(1) <= 0) & (spread > 0)
+        bearish = (spread.shift(1) >= 0) & (spread < 0)
+        for date in bullish[bullish].index[-2:]:
+            add(date, f"Bullish MA{fast}/MA{slow} crossover", "MOVING AVERAGE")
+        for date in bearish[bearish].index[-2:]:
+            add(date, f"Bearish MA{fast}/MA{slow} crossover", "MOVING AVERAGE")
+
+    rsi = calculate_rsi(close, settings.rsi_period)
+    rsi_events = {
+        "RSI entered overbought area": (rsi.shift(1) < 70) & (rsi >= 70),
+        "RSI exited overbought area": (rsi.shift(1) >= 70) & (rsi < 70),
+        "RSI entered oversold area": (rsi.shift(1) > 30) & (rsi <= 30),
+        "RSI exited oversold area": (rsi.shift(1) <= 30) & (rsi > 30),
+    }
+    for label, mask in rsi_events.items():
+        for date in mask[mask].index[-2:]:
+            add(date, label, "RSI")
+
+    for pattern in snapshot.diagnostics.get("pattern_details", []) or []:
+        add(
+            pattern.get("end", last_date),
+            f"{pattern.get('name', 'Pattern')} - {pattern.get('status', 'DEVELOPING')}",
+            "PATTERN",
+            f"Geometric confidence {pattern.get('confidence', 0)}%",
+        )
+
+    # Current conditions remain visible but rank behind genuinely dated transitions on the same date.
+    for setup in snapshot.setups:
+        add(last_date, setup, "CURRENT")
+
+    dedup: dict[tuple[pd.Timestamp, str], dict[str, object]] = {}
+    for event in events:
+        key = (pd.Timestamp(event["date"]), str(event["label"]))
+        dedup[key] = event
+    return sorted(dedup.values(), key=lambda item: pd.Timestamp(item["date"]), reverse=True)
+
+
+def _render_technical_summary(frame: pd.DataFrame, settings: TechnicalSettings, snapshot) -> None:
+    events = _technical_event_history(frame, settings, snapshot)
+    latest = events[0] if events else None
+
+    st.markdown("<div class='terminal-subheader'>CURRENT TECHNICAL STATE</div>", unsafe_allow_html=True)
+    state_cols = st.columns(2)
+    state_cols[0].metric("LEVEL STATE", snapshot.state)
+    state_cols[1].metric("RSI", f"{snapshot.rsi:.1f}" if snapshot.rsi is not None else "N/D")
+
+    support_text = (
+        f"{snapshot.support_low:.2f}-{snapshot.support_high:.2f}"
+        if snapshot.support_low is not None and snapshot.support_high is not None
+        else "N/D"
+    )
+    resistance_text = (
+        f"{snapshot.resistance_low:.2f}-{snapshot.resistance_high:.2f}"
+        if snapshot.resistance_low is not None and snapshot.resistance_high is not None
+        else "N/D"
+    )
+    level_cols = st.columns(2)
+    level_cols[0].metric("NEAREST SUPPORT", support_text)
+    level_cols[1].metric("NEAREST RESISTANCE", resistance_text)
+
+    st.markdown("<div class='terminal-subheader'>LATEST EVENT</div>", unsafe_allow_html=True)
+    if latest:
+        st.markdown(f"**{latest['label']}**")
+        st.caption(f"{pd.Timestamp(latest['date']).strftime('%d %b %Y')} | {latest['category']}")
+        if latest.get("detail"):
+            st.write(str(latest["detail"]))
+    else:
+        st.info("No dated technical event detected.")
+
+    st.markdown("<div class='terminal-subheader'>TECHNICAL STORY</div>", unsafe_allow_html=True)
+    ma_states: list[str] = []
+    close = frame["Close"].dropna()
+    for period in settings.ma_periods:
+        ma = close.rolling(period, min_periods=period).mean()
+        if not ma.dropna().empty:
+            ma_states.append(f"above MA{period}" if close.iloc[-1] > ma.iloc[-1] else f"below MA{period}")
+    story = [f"Price is {', '.join(ma_states)}." if ma_states else "Moving-average context is unavailable."]
+    if snapshot.support_low is not None:
+        story.append(f"Nearest support is {support_text}.")
+    if snapshot.resistance_low is not None:
+        story.append(f"Nearest resistance is {resistance_text}.")
+    if snapshot.rsi is not None:
+        rsi_state = "overbought" if snapshot.rsi >= 70 else "oversold" if snapshot.rsi <= 30 else "neutral"
+        story.append(f"RSI({settings.rsi_period}) is {rsi_state} at {snapshot.rsi:.1f}.")
+    st.write(" ".join(story))
+
+    st.markdown("<div class='terminal-subheader'>RECENT EVENTS</div>", unsafe_allow_html=True)
+    for event in events[:4]:
+        st.markdown(f"**{pd.Timestamp(event['date']).strftime('%d %b')}** - {event['label']}")
+
+    with st.expander("FULL TECHNICAL EVENT HISTORY"):
+        if events:
+            history = pd.DataFrame(events)
+            history["date"] = pd.to_datetime(history["date"]).dt.strftime("%d %b %Y")
+            history = history.rename(columns={"date": "DATE", "label": "EVENT", "category": "CATEGORY", "detail": "DETAIL"})
+            st.dataframe(history[["DATE", "CATEGORY", "EVENT", "DETAIL"]], width="stretch", hide_index=True)
+        else:
+            st.caption("No events available.")
 
 def _pattern_chart(ticker: str, frame: pd.DataFrame, settings: TechnicalSettings, detail: dict) -> go.Figure:
     # Keep the complete available chart visible through the latest bar.
@@ -228,7 +492,18 @@ def _pattern_chart(ticker: str, frame: pd.DataFrame, settings: TechnicalSettings
     h0, h1 = detail.get("highlight_start"), detail.get("highlight_end")
     if h0 is not None and h1 is not None:
         fig.add_vrect(x0=h0, x1=h1, opacity=0.14, line_width=1, annotation_text="PATTERN ZONE")
-    fig.add_annotation(x=visible.index[-1], y=float(visible["High"].max()), text=detail.get("name", "Potential pattern"), showarrow=False, xanchor="right")
+    meta_text = (
+        f"{detail.get('name', 'Potential pattern')}<br>"
+        f"Confidence {detail.get('confidence', 0)}% · {detail.get('status', 'DEVELOPING')} · "
+        f"{detail.get('direction', 'NEUTRAL')}"
+    )
+    fig.add_annotation(
+        x=visible.index[-1], y=float(visible["High"].max()), text=meta_text,
+        showarrow=False, xanchor="right", bgcolor="rgba(10,10,10,0.82)", bordercolor="#ff9f00", borderwidth=1,
+    )
+    visible_bars = _initial_visible_bars(settings.timeframe)
+    if len(visible) > visible_bars:
+        fig.update_xaxes(range=[visible.index[-visible_bars], visible.index[-1]])
     fig.update_layout(
         template="plotly_dark",
         height=620,
@@ -328,7 +603,7 @@ def _render_single_security(ticker: str, settings: TechnicalSettings, *, context
     )
     cards[5].metric("ACTIVE SETUPS", len(snapshot.setups))
 
-    chart_col, event_col = st.columns([2.45, 1])
+    chart_col, event_col = st.columns([2.7, 1])
     with chart_col:
         render_plotly(
             _price_rsi_chart(ticker, frame, settings, snapshot),
@@ -340,28 +615,10 @@ def _render_single_security(ticker: str, settings: TechnicalSettings, *, context
             config={"scrollZoom": True, "displaylogo": False, "responsive": True},
         )
         st.caption(
-            "Drag horizontally to move backward or forward through time. Price and RSI use the same synchronized "
-            "x-axis; use the bottom range slider or mouse wheel to zoom."
+            "Price, volume and RSI share one synchronized time axis. Drag to pan; use the range slider or mouse wheel to zoom."
         )
     with event_col:
-        st.markdown("<div class='terminal-subheader'>TECHNICAL EVENTS</div>", unsafe_allow_html=True)
-        if snapshot.setups:
-            for event in snapshot.setups:
-                st.markdown(f"**{event}**")
-        else:
-            st.info("No active technical event detected under the current parameters.")
-        st.markdown("<div class='terminal-subheader'>LEVELS</div>", unsafe_allow_html=True)
-        st.write(
-            f"Support: {snapshot.support_low:.2f}–{snapshot.support_high:.2f}"
-            if snapshot.support_low is not None
-            else "Support: not available"
-        )
-        st.write(
-            f"Resistance: {snapshot.resistance_low:.2f}–{snapshot.resistance_high:.2f}"
-            if snapshot.resistance_low is not None
-            else "Resistance: not available"
-        )
-        st.caption("Levels are clustered swing zones, not exact execution prices.")
+        _render_technical_summary(frame, settings, snapshot)
 
 
 def render_technical_analysis() -> None:
@@ -430,6 +687,8 @@ def render_technical_analysis() -> None:
             "In resistance area",
             "Approaching resistance",
             "Resistance breakout",
+            "Flipped support confirmed",
+            "Flipped resistance confirmed",
             "Bullish MA crossover",
             "Bearish MA crossover",
             "RSI overbought",
@@ -495,6 +754,9 @@ def render_technical_analysis() -> None:
                 "Technical State",
                 "Setups",
                 "Patterns",
+                "Best Pattern",
+                "Pattern Confidence",
+                "Pattern Status",
                 "Last",
                 "Distance Support %",
                 "Distance Resistance %",
@@ -573,8 +835,14 @@ def render_technical_analysis() -> None:
                 names = [str(item.get("name", "Potential pattern")) for item in details]
                 pattern_name = st.selectbox("DETECTED PATTERN", names, key="direct_pattern_name")
                 detail = next(item for item in details if str(item.get("name", "Potential pattern")) == pattern_name)
+                m1, m2, m3, m4 = st.columns(4)
+                m1.metric("PATTERN", pattern_name.replace("Potential ", ""))
+                m2.metric("CONFIDENCE", f"{detail.get('confidence', 0)}%")
+                m3.metric("LIFECYCLE", detail.get("status", "DEVELOPING"))
+                m4.metric("DIRECTION", detail.get("direction", "NEUTRAL"))
                 st.caption(
-                    f"{pattern_name} | {settings.timeframe} candles | Complete available history through the latest bar"
+                    f"{pattern_name} | {settings.timeframe} candles | Full history retained through the latest bar. "
+                    f"{detail.get('notes', '')}"
                 )
                 render_plotly(
                     _pattern_chart(pattern_ticker, frame, settings, detail),
@@ -607,8 +875,9 @@ def render_technical_analysis() -> None:
             "the selected buffer."
         )
         st.write(
-            "Pattern detection uses explicit geometric heuristics and always reports candidates as potential. It does "
-            "not alter the public cyclical matrix or generate BUY/SELL recommendations."
+            "Pattern detection uses explicit swing geometry, symmetry, slope, curvature and breakout rules. It reports "
+            "a transparent confidence score and lifecycle state (developing, confirmed or retested), always as a potential "
+            "structure requiring visual review. It does not alter the public cyclical matrix or generate BUY/SELL recommendations."
         )
         if isinstance(failures, pd.DataFrame) and not failures.empty:
             st.markdown("### Latest screener failures")

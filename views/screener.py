@@ -634,9 +634,18 @@ def render_market_screener() -> None:
         _constituents.clear()
 
     try:
-        with st.spinner(f"Screening {universe}..."):
+        loading = st.empty()
+        with loading.container():
+            st.markdown("### MARKET SCREENER IS LOADING")
+            progress = st.progress(12, text=f"Loading {universe} constituents...")
+            progress.progress(32, text="Downloading and validating adjusted price histories...")
+            progress.progress(58, text="Computing quarterly, monthly and weekly Composite Momentum...")
             result, source, universe_size = _run_screen(universe)
+            progress.progress(82, text="Applying the public Matrix and Reward/Risk ratings...")
+            progress.progress(100, text="Building screener, sector rankings and relative-strength views...")
+        loading.empty()
     except Exception as exc:
+        loading.empty()
         st.error(f"Screener unavailable: {exc}")
         return
 
