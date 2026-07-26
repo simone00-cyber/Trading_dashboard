@@ -31,6 +31,7 @@ def _flatten_download(raw: pd.DataFrame, tickers: List[str]) -> pd.DataFrame:
 
     return close.sort_index().dropna(how="all")
 
+@st.cache_data(ttl=60, show_spinner=False, max_entries=64)
 def download_close_batch(
     tickers_tuple: Tuple[str, ...],
     period: str = "1y",

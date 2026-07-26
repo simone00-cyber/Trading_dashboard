@@ -357,7 +357,7 @@ def _line_chart(frame: pd.DataFrame, title: str, y_title: str) -> go.Figure:
     return fig
 
 
-def _render_relative_strength(rows: pd.DataFrame, universe: str) -> None:
+def _render_relative_strength(rows: pd.DataFrame, universe: str, initial_ticker: str | None = None) -> None:
     constituents, _ = _constituents(universe)
     universe_tickers = constituents["Ticker"].dropna().astype(str).tolist()
     ticker_labels = {
@@ -405,6 +405,9 @@ def _render_relative_strength(rows: pd.DataFrame, universe: str) -> None:
         benchmark = BENCHMARK_PRESETS[benchmark_choice]
 
     default_tickers = universe_tickers[: min(5, len(universe_tickers))]
+    initial_ticker = initial_ticker.strip().upper() if initial_ticker else None
+    if initial_ticker and initial_ticker in universe_tickers:
+        default_tickers = [initial_ticker] + [ticker for ticker in default_tickers if ticker != initial_ticker]
     selected_tickers = st.multiselect(
         "SECURITIES TO BENCHMARK",
         options=universe_tickers,
@@ -419,7 +422,9 @@ def _render_relative_strength(rows: pd.DataFrame, universe: str) -> None:
         help="Separate symbols with commas. Use Yahoo Finance ticker syntax.",
         key="rs_lab_custom_tickers",
     )
-    custom_tickers = _parse_custom_tickers(custom_value)
+    custom_tickers = list(_parse_custom_tickers(custom_value))
+    if initial_ticker and initial_ticker not in universe_tickers and initial_ticker not in custom_tickers:
+        custom_tickers.insert(0, initial_ticker)
     selected_tickers = list(dict.fromkeys(selected_tickers + custom_tickers))
 
     sector_choices = sorted(constituents["Sector"].dropna().astype(str).unique())
@@ -610,9 +615,28 @@ def _render_relative_strength(rows: pd.DataFrame, universe: str) -> None:
         width="content",
     )
 
+
+def render_relative_strength_lab(*, initial_ticker: str | None = None) -> None:
+    """Render the complete Relative Strength Lab as a reusable workspace module."""
+    header = st.columns([1.35, 0.8, 2.0])
+    universe = header[0].selectbox("INDEX UNIVERSE", list(UNIVERSES), index=0, key="workspace_rs_universe")
+    refresh = header[1].button("REFRESH RS DATA", width="stretch", key="workspace_rs_refresh")
+    header[2].caption("The full laboratory is preserved: benchmark selection, multiple securities, sector composites, ratio, statistics, rotation and heatmap.")
+    if refresh:
+        _run_screen.clear()
+        _constituents.clear()
+    try:
+        with st.spinner(f"Loading {universe} Relative Strength universe..."):
+            result, source, universe_size = _run_screen(universe)
+    except Exception as exc:
+        st.error(f"Relative Strength Lab unavailable: {exc}")
+        return
+    st.caption(f"Universe source: {source} | Analysed: {len(result.rows)}/{universe_size}")
+    _render_relative_strength(result.rows, universe, initial_ticker=initial_ticker)
+
 def render_market_screener() -> None:
     st.markdown(
-        "<div class='terminal-header'>MARKET SCREENER // MATRIX SIGNALS // RELATIVE STRENGTH LAB</div>",
+        "<div class='terminal-header'>MARKET SCREENER // MATRIX SIGNALS</div>",
         unsafe_allow_html=True,
     )
     st.caption(
@@ -661,16 +685,14 @@ def render_market_screener() -> None:
         f"Updated: {pd.Timestamp.utcnow().strftime('%d %b %Y, %H:%M UTC')}"
     )
 
-    tabs = st.tabs(["SCREENER", "RELATIVE STRENGTH LAB", "SECTOR RANKING", "TOP & FLOP", "DATA AUDIT"])
+    tabs = st.tabs(["SCREENER", "SECTOR RANKING", "TOP & FLOP", "DATA AUDIT"])
     with tabs[0]:
         _render_methodology_screener(rows, universe_size)
     with tabs[1]:
-        _render_relative_strength(rows, universe)
-    with tabs[2]:
         _render_sector_ranking(rows)
-    with tabs[3]:
+    with tabs[2]:
         _render_top_flop(rows)
-    with tabs[4]:
+    with tabs[3]:
         st.markdown("<div class='terminal-subheader'>METHODOLOGY & PROVENANCE</div>", unsafe_allow_html=True)
         st.write(
             "The Screener does not use an Opportunity Score, Cyclical Score, weighted average or price-performance rank. "

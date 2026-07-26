@@ -37,5 +37,65 @@ button[kind="primary"] {{ background:{ORANGE} !important; color:#000 !important;
 .stTabs [data-baseweb="tab"] {{ background:{PANEL}; border:1px solid #292929; color:{TEXT}; border-radius:0; }}
 .stTabs [aria-selected="true"] {{ background:{ORANGE} !important; color:#000 !important; }}
 div[data-testid="stDataFrame"] {{ border:1px solid #303030; }} hr {{ border-color:#2b2b2b; }} code {{ color:{ORANGE}; }}
+
+
+/* Fixed loading experience used during page and Asset Workspace transitions. */
+.terminal-loading-overlay {{
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.985);
+    backdrop-filter: blur(5px);
+}}
+.terminal-loading-panel {{
+    width: min(680px, 82vw);
+    padding: 34px 38px;
+    border: 1px solid #ff9f00;
+    background: #090909;
+    box-shadow: 0 0 50px rgba(255, 159, 0, 0.12);
+    font-family: "Courier New", monospace;
+}}
+.terminal-loading-kicker {{
+    color: #ff9f00;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 22px;
+}}
+.terminal-loading-title {{
+    color: #f4f4f4;
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 9px;
+}}
+.terminal-loading-detail {{
+    color: #8c8c8c;
+    font-size: 0.92rem;
+    margin-bottom: 24px;
+}}
+.terminal-loading-track {{
+    height: 8px;
+    overflow: hidden;
+    background: #1d1d1d;
+    border: 1px solid #303030;
+}}
+.terminal-loading-bar {{
+    height: 100%;
+    width: 42%;
+    background: #ff9f00;
+    animation: terminal-loading-slide 1.05s ease-in-out infinite;
+}}
+@keyframes terminal-loading-slide {{
+    0% {{ transform: translateX(-110%); }}
+    100% {{ transform: translateX(255%); }}
+}}
 </style>
+
+
 """
+
+# Design System v1.0 additions are appended to the shared stylesheet above through
+# existing semantic classes. All new v12 views deliberately reuse terminal-header,
+# terminal-subheader, report-box, regime-badge and native metric cards.

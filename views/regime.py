@@ -28,11 +28,17 @@ def render_regime_card(layer: RegimeLayer) -> None:
         unsafe_allow_html=True,
     )
 
-def render_market_regime() -> None:
-    st.markdown(
-        "<div class='terminal-header'>MARKET REGIME // STRUCTURAL, TACTICAL & DAILY DIAGNOSIS</div>",
-        unsafe_allow_html=True,
-    )
+def render_market_regime(show_header: bool = True) -> None:
+    if show_header:
+        st.markdown(
+            "<div class='terminal-header'>MARKET REGIME // STRUCTURAL, TACTICAL & DAILY DIAGNOSIS</div>",
+            unsafe_allow_html=True,
+        )
+    else:
+        st.markdown(
+            "<div class='terminal-subheader'>MARKET REGIME // STRUCTURAL, TACTICAL & DAILY DIAGNOSIS</div>",
+            unsafe_allow_html=True,
+        )
 
     with st.spinner("Calcolo del regime strutturale, della direzione tattica e del tono giornaliero..."):
         close = download_close_batch(tuple(REGIME_UNIVERSE.values()), period="2y")

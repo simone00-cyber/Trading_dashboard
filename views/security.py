@@ -11,6 +11,7 @@ from analysis.security_signal import build_tactical_signal_state
 from analysis.cyclical import build_cyclical_engine, methodology_coverage
 from caruso_analysis import RESAMPLE_RULES, TimeframeResult, calculate_composite_momentum, download_prices, prepare_technical_prices, resample_ohlc, summarize_timeframe
 
+@st.cache_data(ttl=3600, show_spinner=False, max_entries=32)
 def load_analysis(
     ticker: str,
     period: str,
@@ -91,16 +92,21 @@ def render_summary_table(summaries: Dict[str, TimeframeResult]) -> None:
         )
     st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
 
-def render_security_report() -> None:
-    st.markdown("<div class='terminal-header'>SECURITY REPORT // CYCLICAL ANALYSIS</div>", unsafe_allow_html=True)
+def render_security_report(*, ticker_override: str | None = None, embedded: bool = False) -> None:
+    if not embedded:
+        st.markdown("<div class='terminal-header'>SECURITY REPORT // CYCLICAL ANALYSIS</div>", unsafe_allow_html=True)
     st.caption("Signal engine and Active Position: adjusted OHLC (dividends/splits neutralised). Price chart and displayed levels: actual market OHLC.")
 
     controls = st.columns([1.2, 1, 1, 1])
-    ticker = controls[0].text_input("Ticker Yahoo Finance", value="ENI.MI").strip().upper()
-    period = controls[1].selectbox("Storico", ["max", "20y", "15y", "10y"], index=0)
-    chart_years = controls[2].slider("Anni grafico", 1, 15, 5)
+    if ticker_override:
+        ticker = ticker_override.strip().upper()
+        controls[0].metric("WORKSPACE TICKER", ticker)
+    else:
+        ticker = controls[0].text_input("Ticker Yahoo Finance", value="ENI.MI").strip().upper()
+    period = controls[1].selectbox("Storico", ["max", "20y", "15y", "10y"], index=0, key=f"security_period_{'workspace' if embedded else 'page'}")
+    chart_years = controls[2].slider("Anni grafico", 1, 15, 5, key=f"security_chart_years_{'workspace' if embedded else 'page'}")
     controls[3].markdown("<br>", unsafe_allow_html=True)
-    controls[3].button("GENERATE REPORT", type="primary", width="stretch")
+    controls[3].button("GENERATE REPORT", type="primary", width="stretch", key=f"security_generate_{'workspace' if embedded else 'page'}")
 
     if not ticker:
         st.info("Inserisci un ticker.")

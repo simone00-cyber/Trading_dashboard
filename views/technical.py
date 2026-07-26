@@ -621,54 +621,67 @@ def _render_single_security(ticker: str, settings: TechnicalSettings, *, context
         _render_technical_summary(frame, settings, snapshot)
 
 
-def render_technical_analysis() -> None:
-    st.markdown(
-        "<div class='terminal-header'>TECHNICAL ANALYSIS // SCREENER // PATTERN RECOGNITION</div>",
-        unsafe_allow_html=True,
-    )
+def render_technical_analysis(*, ticker_override: str | None = None, embedded: bool = False) -> None:
+    if not embedded:
+        st.markdown(
+            "<div class='terminal-header'>TECHNICAL ANALYSIS // SCREENER // PATTERN RECOGNITION</div>",
+            unsafe_allow_html=True,
+        )
     st.caption(
         "Search any Yahoo Finance ticker for direct technical analysis. The separate screener scans a selected "
         "index for support, resistance, breakout and other technical behaviours. No BUY or SELL signal is generated."
     )
 
-    if "technical_analysis_ticker" not in st.session_state:
-        st.session_state.technical_analysis_ticker = "AAPL"
-    if "technical_pattern_ticker" not in st.session_state:
-        st.session_state.technical_pattern_ticker = "AAPL"
+    default_ticker = (ticker_override or "AAPL").strip().upper()
+    if "technical_analysis_ticker" not in st.session_state or ticker_override:
+        st.session_state.technical_analysis_ticker = default_ticker
+    if "technical_pattern_ticker" not in st.session_state or ticker_override:
+        st.session_state.technical_pattern_ticker = default_ticker
 
-    with st.sidebar:
+    settings_container = st.expander("TECHNICAL PARAMETERS", expanded=False) if embedded else st.sidebar
+    with settings_container:
         settings = _settings_panel()
-        if st.button("REFRESH TECHNICAL DATA", width="stretch"):
+        if st.button("REFRESH TECHNICAL DATA", width="stretch", key=f"refresh_technical_{'embedded' if embedded else 'page'}"):
             _technical_prices.clear()
             _custom_prices.clear()
             st.cache_data.clear()
             st.rerun()
 
-    tabs = st.tabs([
+    technical_views = [
         "TECHNICAL ANALYSIS",
         "TECHNICAL SCREENER",
         "PATTERN ANALYSIS",
         "METHODOLOGY & AUDIT",
-    ])
+    ]
+    active_view = st.segmented_control(
+        "TECHNICAL MODULE",
+        technical_views,
+        default=st.session_state.get("technical_active_view", "TECHNICAL ANALYSIS"),
+        key="technical_active_view",
+        width="stretch",
+    ) or "TECHNICAL ANALYSIS"
 
     # ------------------------------------------------------------------
     # Direct analysis: one default ticker, then any ticker entered by user.
     # ------------------------------------------------------------------
-    with tabs[0]:
+    if active_view == "TECHNICAL ANALYSIS":
         st.markdown("### Security analysis")
         left, right = st.columns([3.2, 1])
-        with left.form("direct_technical_ticker_form"):
-            requested = st.text_input(
-                "YAHOO FINANCE TICKER",
-                value=st.session_state.technical_analysis_ticker,
-                placeholder="AAPL, TSLA, ENI.MI, ASML.AS, BTC-USD",
-                help="Enter one Yahoo Finance symbol. AAPL is shown by default.",
-            )
-            submitted = st.form_submit_button("LOAD ANALYSIS", width="stretch")
-        if submitted and requested.strip():
-            st.session_state.technical_analysis_ticker = requested.strip().upper()
-
-        ticker = st.session_state.technical_analysis_ticker
+        if ticker_override:
+            left.info(f"Workspace ticker: {default_ticker}")
+            ticker = default_ticker
+        else:
+            with left.form("direct_technical_ticker_form"):
+                requested = st.text_input(
+                    "YAHOO FINANCE TICKER",
+                    value=st.session_state.technical_analysis_ticker,
+                    placeholder="AAPL, TSLA, ENI.MI, ASML.AS, BTC-USD",
+                    help="Enter one Yahoo Finance symbol. AAPL is shown by default.",
+                )
+                submitted = st.form_submit_button("LOAD ANALYSIS", width="stretch")
+            if submitted and requested.strip():
+                st.session_state.technical_analysis_ticker = requested.strip().upper()
+            ticker = st.session_state.technical_analysis_ticker
         right.metric("ACTIVE TICKER", ticker)
         st.markdown(f"# {ticker}")
         _render_single_security(ticker, settings, context="direct_analysis")
@@ -676,7 +689,7 @@ def render_technical_analysis() -> None:
     # ------------------------------------------------------------------
     # Index-wide screener: lists are used only to filter and inspect cases.
     # ------------------------------------------------------------------
-    with tabs[1]:
+    elif active_view == "TECHNICAL SCREENER":
         header = st.columns([1.35, 1.65, 0.8])
         universe_name = header[0].selectbox("INDEX UNIVERSE", list(UNIVERSES), key="technical_screen_universe")
         behaviour_options = [
@@ -798,19 +811,22 @@ def render_technical_analysis() -> None:
     # ------------------------------------------------------------------
     # Direct pattern analysis for any ticker, independent of the index scan.
     # ------------------------------------------------------------------
-    with tabs[2]:
+    elif active_view == "PATTERN ANALYSIS":
         st.markdown("### Pattern analysis")
-        with st.form("direct_pattern_ticker_form"):
-            pattern_request = st.text_input(
-                "YAHOO FINANCE TICKER FOR PATTERN ANALYSIS",
-                value=st.session_state.technical_pattern_ticker,
-                placeholder="AAPL, UCG.MI, SAP.DE, BTC-USD",
-            )
-            pattern_submit = st.form_submit_button("DETECT PATTERNS", width="stretch")
-        if pattern_submit and pattern_request.strip():
-            st.session_state.technical_pattern_ticker = pattern_request.strip().upper()
-
-        pattern_ticker = st.session_state.technical_pattern_ticker
+        if ticker_override:
+            pattern_ticker = default_ticker
+            st.info(f"Pattern analysis synchronized to workspace ticker: {pattern_ticker}")
+        else:
+            with st.form("direct_pattern_ticker_form"):
+                pattern_request = st.text_input(
+                    "YAHOO FINANCE TICKER FOR PATTERN ANALYSIS",
+                    value=st.session_state.technical_pattern_ticker,
+                    placeholder="AAPL, UCG.MI, SAP.DE, BTC-USD",
+                )
+                pattern_submit = st.form_submit_button("DETECT PATTERNS", width="stretch")
+            if pattern_submit and pattern_request.strip():
+                st.session_state.technical_pattern_ticker = pattern_request.strip().upper()
+            pattern_ticker = st.session_state.technical_pattern_ticker
         st.markdown(f"# {pattern_ticker}")
         prices = _custom_prices((pattern_ticker,))
         raw = prices.get(pattern_ticker)
@@ -858,7 +874,7 @@ def render_technical_analysis() -> None:
                     "is not a forecast or trading signal."
                 )
 
-    with tabs[3]:
+    else:
         st.markdown("### Transparent rules")
         st.write(
             "Direct analysis accepts any valid Yahoo Finance ticker and is independent of the index universe. The "
@@ -879,7 +895,8 @@ def render_technical_analysis() -> None:
             "a transparent confidence score and lifecycle state (developing, confirmed or retested), always as a potential "
             "structure requiring visual review. It does not alter the public cyclical matrix or generate BUY/SELL recommendations."
         )
-        if isinstance(failures, pd.DataFrame) and not failures.empty:
+        latest_failures = st.session_state.get("technical_scan_failures", pd.DataFrame())
+        if isinstance(latest_failures, pd.DataFrame) and not latest_failures.empty:
             st.markdown("### Latest screener failures")
-            st.dataframe(failures, width="stretch", hide_index=True)
+            st.dataframe(latest_failures, width="stretch", hide_index=True)
 
