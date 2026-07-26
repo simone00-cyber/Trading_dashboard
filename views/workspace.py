@@ -4,7 +4,7 @@ import html
 import streamlit as st
 
 
-_WORKSPACE_MODULES = ["TECHNICAL ANALYSIS", "SECURITY REPORT", "RELATIVE STRENGTH"]
+_WORKSPACE_MODULES = ["TECHNICAL ANALYSIS", "CYCLICAL ANALYSIS", "RELATIVE STRENGTH"]
 
 
 def _request_workspace_module() -> None:
@@ -32,7 +32,7 @@ def _loading_overlay(title: str, detail: str):
 def render_asset_workspace() -> None:
     st.markdown("<div class='terminal-header'>ASSET WORKSPACE // COMPLETE SECURITY RESEARCH</div>", unsafe_allow_html=True)
     st.caption(
-        "One ticker controls the complete Technical Analysis, Security Report and Relative Strength modules. "
+        "One ticker controls the complete Technical Analysis, Cyclical Analysis and Relative Strength modules. "
         "Only the active module is executed, reducing network calls and calculation time without removing functionality."
     )
 
@@ -81,7 +81,7 @@ def render_asset_workspace() -> None:
         if active_module == "TECHNICAL ANALYSIS":
             from views.technical import render_technical_analysis
             render_technical_analysis(ticker_override=ticker, embedded=True)
-        elif active_module == "SECURITY REPORT":
+        elif active_module == "CYCLICAL ANALYSIS":
             from views.security import render_security_report
             render_security_report(ticker_override=ticker, embedded=True)
         else:
