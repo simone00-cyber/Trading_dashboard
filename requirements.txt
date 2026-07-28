@@ -10,3 +10,4 @@ requests>=2.31
 google-genai
 python-dotenv
 lxml>=5.0
+google-genai

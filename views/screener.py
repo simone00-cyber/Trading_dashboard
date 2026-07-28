@@ -635,10 +635,8 @@ def render_relative_strength_lab(*, initial_ticker: str | None = None) -> None:
     _render_relative_strength(result.rows, universe, initial_ticker=initial_ticker)
 
 def render_market_screener() -> None:
-    st.markdown(
-        "<div class='terminal-header'>MARKET SCREENER // MATRIX SIGNALS</div>",
-        unsafe_allow_html=True,
-    )
+    st.markdown("<div class='section-eyebrow'>WHAT TO LOOK AT TODAY</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section-title'>Opportunities</div>", unsafe_allow_html=True)
     st.caption(
         "Choose an index universe. The Screener follows the implemented public cyclical matrix; "
         "Sector Ranking and Top & Flop use adjusted-price performance over the selected horizon."

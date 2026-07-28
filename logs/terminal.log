@@ -99,3 +99,1239 @@
 2026-07-26 23:06:10,106 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
 2026-07-26 23:06:10,250 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
 2026-07-26 23:06:12,306 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 01:09:14,487 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 01:09:14,916 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-28 01:09:42,536 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 01:09:42,896 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-28 01:11:31,640 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 01:11:31,925 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 400 Bad Request"
+2026-07-28 01:16:03,912 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 01:16:17,819 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-07-28 01:16:34,448 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 01:16:55,780 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-07-28 21:25:44,208 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 21:25:45,097 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 21:27:14,493 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 21:27:15,353 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 21:31:49,665 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 21:31:50,533 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 21:33:09,343 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 21:33:10,139 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 21:36:27,285 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 21:36:28,119 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 21:39:37,627 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 21:39:38,502 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 21:41:13,006 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 21:41:13,823 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 21:45:34,975 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 21:45:36,499 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 21:56:56,369 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 21:56:56,680 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 21:56:57,236 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 21:56:58,309 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 21:56:58,539 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 21:56:59,148 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 21:56:59,435 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:57:00,508 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 21:57:01,215 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:57:01,222 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 21:57:01,222 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:57:01,222 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:57:01,549 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:57:01,550 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:57:01,550 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:57:02,109 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:57:02,109 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:57:02,110 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:57:02,818 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 21:57:03,388 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:57:03,390 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:57:03,390 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:57:04,418 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:57:04,419 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:57:04,420 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:57:09,658 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 21:57:10,036 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:57:10,048 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 21:57:10,049 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 21:57:10,050 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:57:10,409 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 21:57:10,411 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:57:10,411 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 21:57:11,034 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 21:57:11,036 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:57:11,037 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 21:57:11,802 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:57:11,804 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:57:11,804 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:57:13,072 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:57:13,074 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:57:13,075 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:57:54,302 | ERROR | yfinance | $HG=F: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:57:54,302 | ERROR | yfinance | $HG=F: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:57:54,304 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:57:54,304 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:57:54,305 | ERROR | yfinance | ['HG=F']: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:57:54,305 | ERROR | yfinance | ['HG=F']: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:59:06,062 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 21:59:06,397 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 21:59:06,759 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 21:59:07,335 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 21:59:07,583 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 21:59:08,628 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 21:59:08,955 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:59:10,073 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 21:59:10,766 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:59:10,768 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 21:59:10,769 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:59:10,770 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:59:11,091 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:59:11,093 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:59:11,094 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:59:11,761 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:59:11,763 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:59:11,765 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 21:59:12,480 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 21:59:13,069 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:59:13,071 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:59:13,072 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:59:14,239 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:59:14,240 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:59:14,241 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:59:18,478 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 21:59:18,792 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:59:18,797 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 21:59:18,797 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 21:59:18,798 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:59:19,070 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 21:59:19,072 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:59:19,073 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 21:59:19,743 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 21:59:19,745 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:59:19,745 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 21:59:20,708 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:59:20,710 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:59:20,711 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:59:21,659 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 21:59:21,661 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 21:59:21,665 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:04:05,266 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 22:04:05,991 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 22:06:27,157 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 22:06:27,875 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 22:38:54,454 | ERROR | yfinance | $^FCHI: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:38:54,457 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:38:54,457 | ERROR | yfinance | ['^FCHI']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:38:55,630 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 22:38:56,345 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 22:40:09,626 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 22:40:10,308 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 22:45:06,927 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:45:07,253 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:45:07,649 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:45:08,335 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:45:08,573 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:45:09,124 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 22:45:09,414 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 22:45:10,451 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 22:45:11,188 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:45:11,191 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 22:45:11,192 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 22:45:11,195 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:45:11,425 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 22:45:11,426 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:45:11,427 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 22:45:11,969 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 22:45:11,971 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:45:11,971 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 22:45:12,696 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 22:45:13,547 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:45:13,551 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:45:13,552 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:45:14,776 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:45:14,777 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:45:14,778 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:45:21,353 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:45:21,699 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:45:21,702 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 22:45:21,703 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:45:21,704 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:45:21,915 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:45:21,916 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:45:21,917 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:45:22,527 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:45:22,529 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:45:22,531 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:45:23,766 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:45:23,767 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:45:23,767 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:45:24,694 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:45:24,695 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:45:24,695 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:46:17,133 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:46:17,362 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:46:17,690 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:46:18,529 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:46:18,813 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:46:19,598 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 22:46:19,932 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 22:46:21,285 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 22:46:22,071 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:46:22,081 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 22:46:22,103 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 22:46:22,109 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:46:22,563 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 22:46:22,564 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:46:22,564 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 22:46:23,172 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 22:46:23,173 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:46:23,174 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 22:46:23,918 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 22:46:24,453 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:46:24,453 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:46:24,454 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:46:25,616 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:46:25,617 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:46:25,620 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:46:29,925 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:46:30,246 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:46:30,252 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 22:46:30,252 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:46:30,254 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:46:30,530 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:46:30,531 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:46:30,532 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:46:31,141 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:46:31,142 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:46:31,143 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 22:46:31,952 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:46:31,954 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:46:31,955 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:46:32,857 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:46:32,858 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 22:46:32,859 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 22:47:17,295 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:47:17,619 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:47:17,867 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:47:18,353 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:47:18,611 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:47:19,126 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 22:47:51,957 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 22:47:52,619 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 22:48:17,323 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:48:17,536 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:48:17,852 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:48:18,461 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:48:18,705 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:48:19,273 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 22:49:15,158 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 22:49:15,758 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 22:49:17,264 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:49:17,544 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:49:17,781 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:49:18,330 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:49:18,523 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:49:19,004 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 22:49:30,116 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 22:49:31,012 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 22:50:17,269 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:50:17,486 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:50:17,748 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:50:18,343 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:50:18,603 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:50:19,210 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 22:51:17,315 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:51:17,580 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:51:17,845 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:51:18,335 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:51:18,580 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:51:19,041 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 22:52:17,341 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:52:17,570 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:52:17,863 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:52:18,580 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:52:18,829 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:52:19,476 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 22:53:34,274 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:53:34,583 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:53:34,890 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:53:35,492 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:53:35,705 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:53:36,350 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 22:55:34,713 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:55:35,076 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:55:35,387 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:55:36,201 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:55:36,491 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:55:37,127 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 22:56:34,349 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:56:34,568 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:56:34,926 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:56:35,434 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:56:35,651 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:56:36,188 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 22:57:34,496 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:57:34,826 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:57:35,096 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:57:35,770 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:57:35,998 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:57:36,641 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 22:58:34,466 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:58:34,748 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:58:35,007 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:58:35,613 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:58:35,896 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:58:36,406 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 22:59:34,245 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 22:59:34,554 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 22:59:34,823 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 22:59:35,495 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 22:59:35,671 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 22:59:36,186 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:00:34,338 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:00:34,556 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:00:34,915 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:00:35,442 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:00:35,648 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:00:36,158 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:01:34,267 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:01:34,565 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:01:34,820 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:01:35,377 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:01:35,593 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:01:38,026 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:02:34,272 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:02:34,471 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:02:34,709 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:02:35,226 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:02:35,497 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:02:36,214 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:03:34,222 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:03:34,450 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:03:34,698 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:03:35,250 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:03:35,480 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:03:36,070 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:04:34,166 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:04:34,461 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:04:34,688 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:04:35,324 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:04:35,631 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:04:36,102 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:05:34,295 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:05:34,532 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:05:34,785 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:05:35,377 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:05:35,628 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:05:36,161 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:06:34,192 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:06:34,465 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:06:34,713 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:06:35,173 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:06:35,416 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:06:35,878 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:07:34,285 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:07:34,560 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:07:34,858 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:07:35,826 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:07:36,110 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:07:36,685 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:12:20,417 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:12:20,715 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:12:20,967 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:12:21,629 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:12:21,870 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:12:22,481 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:12:22,803 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:12:23,420 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:12:23,426 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 23:12:23,427 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:12:23,428 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:12:23,989 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:12:23,990 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:12:23,990 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:12:24,649 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:12:24,650 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:12:24,650 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:12:25,245 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:12:25,246 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:12:25,246 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:12:26,291 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:12:26,292 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:12:26,293 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:12:28,627 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:12:28,893 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:12:28,899 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 23:12:28,899 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:12:28,900 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:12:29,095 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:12:29,096 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:12:29,098 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:12:29,674 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:12:29,674 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:12:29,674 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:12:30,424 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:12:30,425 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:12:30,426 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:12:32,601 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:12:32,601 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:12:32,602 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:13:21,237 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:13:21,486 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:13:22,371 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:13:23,028 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:13:23,290 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:13:23,928 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:14:21,587 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:14:21,929 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:14:22,215 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:14:22,776 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:14:23,068 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:14:23,644 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:15:21,374 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:15:21,591 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:15:21,853 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:15:22,557 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:15:22,795 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:15:23,733 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:16:23,586 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:16:23,586 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:16:24,222 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:16:24,222 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:16:24,582 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:16:24,582 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:16:25,478 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:16:25,478 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:16:25,741 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:16:25,741 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:16:26,423 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:16:26,423 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:16:40,625 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:16:41,783 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 23:17:21,327 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:17:21,327 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:17:21,577 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:17:21,577 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:17:21,832 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:17:21,832 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:17:22,341 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:17:22,341 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:17:22,581 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:17:22,581 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:17:23,128 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:17:23,128 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:17:41,473 | ERROR | yfinance | $GC=F: possibly delisted; no price data found  (period=1mo)
+2026-07-28 23:17:41,482 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:17:41,482 | ERROR | yfinance | ['GC=F']: possibly delisted; no price data found  (period=1mo)
+2026-07-28 23:18:22,108 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:18:22,108 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:18:22,617 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:18:22,617 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:18:22,875 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:18:22,875 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:18:23,578 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:18:23,578 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:18:23,826 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:18:23,826 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:18:24,479 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:18:24,479 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:19:25,419 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:19:26,143 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 23:19:34,357 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:19:34,357 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:19:34,633 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:19:34,633 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:19:34,918 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:19:34,918 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:19:35,705 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:19:35,705 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:19:35,926 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:19:35,926 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:19:36,585 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:19:36,585 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:19:48,926 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:19:49,252 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:20:34,266 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:20:34,266 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:20:34,266 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:20:34,623 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:20:34,623 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:20:34,623 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:20:34,897 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:20:34,897 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:20:34,897 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:20:35,468 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:20:35,468 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:20:35,468 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:20:35,729 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:20:35,729 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:20:35,729 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:20:36,241 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:20:36,241 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:20:36,241 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:21:19,521 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:21:19,784 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:21:20,233 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:21:21,244 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:21:21,541 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:21:22,252 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:21:22,581 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:21:23,704 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 23:21:24,413 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:21:24,415 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 23:21:24,417 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:21:24,418 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:21:24,951 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:21:24,952 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:21:24,953 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:21:25,605 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:21:25,606 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:21:25,607 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:21:26,407 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 23:21:27,034 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:21:27,036 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:21:27,038 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:21:28,306 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:21:28,307 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:21:28,308 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:21:39,489 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:21:40,024 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:21:40,032 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 23:21:40,033 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:21:40,034 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:21:40,358 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:21:40,359 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:21:40,360 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:21:41,453 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:21:41,457 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:21:41,459 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:21:42,424 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:21:42,425 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:21:42,425 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:21:43,460 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:21:43,461 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:21:43,463 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:21:47,275 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:21:47,855 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:22:19,563 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:22:20,064 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:22:20,377 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:22:21,216 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:22:21,526 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:22:22,112 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:23:08,522 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:23:08,983 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:23:16,712 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:23:19,434 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:23:19,662 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:23:19,978 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:23:20,592 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:23:20,853 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:23:21,545 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:23:23,506 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 23:24:19,228 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:24:19,611 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:24:19,988 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:24:20,561 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:24:20,802 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:24:21,441 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:25:19,283 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:25:19,540 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:25:19,793 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:25:20,619 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:25:20,869 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:25:21,484 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:26:19,305 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:26:19,711 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:26:20,152 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:26:20,759 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:26:21,038 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:26:21,748 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:27:19,255 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:27:19,444 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:27:19,711 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:27:20,341 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:27:20,574 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:27:21,203 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:28:34,309 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:28:35,585 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:28:35,912 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:28:37,773 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:28:38,112 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:28:39,163 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:29:35,042 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:29:35,276 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:29:35,598 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:29:36,101 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:29:36,346 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:29:36,903 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:30:35,763 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:30:35,763 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:30:36,102 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:30:36,102 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:30:36,358 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:30:36,358 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:30:37,049 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:30:37,049 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:30:37,294 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:30:37,294 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:30:38,004 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:30:38,004 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:31:35,139 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:31:35,139 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:31:35,391 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:31:35,391 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:31:35,673 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:31:35,673 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:31:36,245 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:31:36,245 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:31:36,492 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:31:36,492 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:31:37,030 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:31:37,030 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:32:36,201 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:32:36,201 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:32:36,201 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:32:36,503 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:32:36,503 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:32:36,503 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:32:36,782 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:32:36,782 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:32:36,782 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:32:37,542 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:32:37,542 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:32:37,542 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:32:37,781 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:32:37,781 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:32:37,781 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:32:38,511 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:32:38,511 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:32:38,511 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:33:38,520 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:33:38,520 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:33:38,520 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:33:38,520 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:33:38,949 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:33:38,949 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:33:38,949 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:33:38,949 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:33:39,269 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:33:39,269 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:33:39,269 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:33:39,269 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:33:40,499 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:33:40,499 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:33:40,499 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:33:40,499 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:33:40,781 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:33:40,781 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:33:40,781 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:33:40,781 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:33:41,931 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:33:41,931 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:33:41,931 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:33:41,931 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:34:02,973 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:34:04,002 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-28 23:34:31,391 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:34:32,283 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:34:32,710 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:34:32,896 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:34:37,751 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:34:37,751 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:34:37,751 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:34:37,751 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:34:38,113 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:34:38,113 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:34:38,113 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:34:38,113 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:34:38,745 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:34:38,745 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:34:38,745 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:34:38,745 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:34:40,310 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:34:40,310 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:34:40,310 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:34:40,310 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:34:40,637 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:34:40,637 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:34:40,637 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:34:40,637 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:34:42,901 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:34:42,901 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:34:42,901 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:34:42,901 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:34:54,312 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:34:54,718 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:34:55,303 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:34:55,926 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:34:56,258 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:34:57,578 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:34:57,806 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:34:58,453 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:34:58,696 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:34:59,389 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:34:59,637 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:35:00,345 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:35:00,574 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:35:01,252 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:35:22,366 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:35:22,748 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:35:23,235 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:35:23,600 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:35:34,848 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:35:34,848 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:35:34,848 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:35:34,848 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:35:35,087 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:35:35,087 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:35:35,087 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:35:35,087 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:35:36,036 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:35:36,036 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:35:36,036 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:35:36,036 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:35:37,087 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:35:37,087 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:35:37,087 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:35:37,087 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:35:37,366 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:35:37,366 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:35:37,366 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:35:37,366 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:35:37,921 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:35:37,921 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:35:37,921 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:35:37,921 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:35:59,444 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:35:59,945 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:36:00,226 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:36:00,285 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:36:00,763 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:36:00,812 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:36:01,092 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:36:02,009 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:36:02,357 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:36:03,453 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 23:36:04,138 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:36:04,148 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 23:36:04,148 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:36:04,150 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:36:04,433 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:36:04,435 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:36:04,436 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:36:05,032 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:36:05,033 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:36:05,033 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:36:05,748 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 23:36:06,296 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:36:06,299 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:36:06,300 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:36:07,376 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:36:07,379 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:36:07,380 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:36:11,363 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:36:11,620 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:36:11,623 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 23:36:11,624 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:36:11,624 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:36:11,855 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:36:11,857 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:36:11,859 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:36:12,608 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:36:12,610 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:36:12,610 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:36:13,321 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:36:13,322 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:36:13,324 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:36:14,441 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:36:14,443 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:36:14,444 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:36:22,916 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:36:23,235 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:36:43,139 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:36:43,706 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:36:46,463 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:36:46,849 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:36:57,250 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:36:57,634 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:37:00,269 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:37:00,532 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:37:00,814 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:37:01,458 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:37:01,724 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:37:02,406 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:37:11,825 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:37:12,172 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:38:00,308 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:38:00,629 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:38:00,893 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:38:01,409 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:38:01,629 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:38:02,188 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:39:00,307 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:39:00,572 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:39:00,865 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:39:01,623 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:39:01,868 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:39:02,504 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:40:01,334 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:40:01,641 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:40:01,892 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:40:02,527 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:40:02,779 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:40:05,515 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:42:00,188 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:42:00,507 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:42:00,782 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:42:01,374 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:42:01,652 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:42:02,248 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:43:34,387 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:43:34,704 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:43:34,956 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:43:35,557 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:43:35,861 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:43:36,442 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:44:34,972 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:44:35,203 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:44:35,482 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:44:36,094 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:44:36,342 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:44:36,825 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:45:34,344 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:45:34,655 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:45:34,931 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:45:35,447 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:45:35,715 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:45:36,264 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:46:34,344 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:46:34,552 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:46:34,818 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:46:36,566 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:46:36,812 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:46:37,351 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:47:34,309 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:47:34,309 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:47:34,616 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:47:34,616 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:47:34,888 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:47:34,888 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:47:35,425 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:47:35,425 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:47:35,678 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:47:35,678 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:47:36,563 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:47:36,563 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:48:34,297 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:48:34,297 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:48:34,297 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:48:34,610 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:48:34,610 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:48:34,610 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:48:34,922 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:48:34,922 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:48:34,922 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:48:35,643 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:48:35,643 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:48:35,643 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:48:35,936 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:48:35,936 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:48:35,936 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:48:36,580 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:48:36,580 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:48:36,580 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:48:57,019 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:48:57,548 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:49:25,772 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:49:26,277 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:49:26,844 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:49:27,189 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:49:27,423 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:49:27,758 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:49:28,082 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:49:28,369 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:49:28,618 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:49:28,952 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:49:29,195 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:49:29,502 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:49:29,751 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:49:30,097 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:49:34,439 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:49:34,439 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:49:34,439 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:49:34,439 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:49:35,132 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:49:35,132 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:49:35,132 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:49:35,132 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:49:35,397 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:49:35,397 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:49:35,397 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:49:35,397 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:49:36,067 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:49:36,067 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:49:36,067 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:49:36,067 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:49:36,313 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:49:36,313 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:49:36,313 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:49:36,313 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:49:36,922 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:49:36,922 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:49:36,922 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:49:36,922 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:50:27,015 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:50:27,303 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:50:27,645 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:50:27,908 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:50:28,294 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:50:28,403 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:50:28,567 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:50:29,146 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:50:29,476 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:50:30,480 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 23:50:31,135 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:50:31,148 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 23:50:31,148 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:50:31,149 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:50:31,588 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:50:31,589 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:50:31,590 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:50:32,171 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:50:32,172 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:50:32,172 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-28 23:50:33,092 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-28 23:50:33,672 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:50:33,673 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:50:33,674 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:50:34,755 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:50:34,757 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:50:34,758 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:50:38,845 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:50:39,288 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:50:39,830 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-28 23:50:39,830 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:50:39,831 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:50:40,101 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:50:40,103 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:50:40,104 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:50:40,794 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:50:40,795 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:50:40,796 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-28 23:50:41,526 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:50:41,527 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:50:41,529 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:50:42,479 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:50:42,480 | ERROR | yfinance | 
+1 Failed download:
+2026-07-28 23:50:42,481 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-28 23:51:15,908 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:51:16,238 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:51:27,406 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:51:27,726 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:51:27,986 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:51:28,747 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:51:28,990 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:51:30,001 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:52:27,310 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:52:27,615 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:52:27,960 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:52:28,603 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:52:28,924 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:52:29,482 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:53:27,309 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:53:27,585 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:53:27,865 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:53:29,184 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:53:29,443 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:53:30,724 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:54:27,308 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:54:27,550 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:54:27,853 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:54:28,361 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:54:28,595 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:54:29,211 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:55:27,259 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:55:27,528 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:55:27,791 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:55:28,383 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:55:28,628 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:55:29,136 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:56:02,380 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-28 23:56:02,886 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-28 23:56:27,249 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:56:27,732 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:56:28,003 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:56:28,462 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:56:28,691 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:56:29,528 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:57:34,312 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:57:34,595 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:57:34,866 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:57:35,510 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:57:35,743 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:57:36,332 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:58:36,053 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:58:36,265 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:58:36,534 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:58:37,199 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:58:37,412 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:58:38,027 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-28 23:59:34,278 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-28 23:59:34,587 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-28 23:59:34,824 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-28 23:59:35,377 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-28 23:59:35,573 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-28 23:59:36,069 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:00:34,677 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:00:34,677 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:00:34,904 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:00:34,904 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:00:35,132 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:00:35,132 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:00:35,679 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:00:35,679 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:00:35,909 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:00:35,909 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:00:36,502 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:00:36,502 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:01:05,668 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-29 00:01:06,105 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-29 00:01:35,137 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:01:35,137 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:01:35,578 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:01:35,578 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:01:35,921 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:01:35,921 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:01:36,558 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:01:36,558 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:01:36,891 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:01:36,891 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:01:37,502 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:01:37,502 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:02:35,583 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:02:35,583 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:02:35,583 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:02:35,583 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:02:35,817 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:02:35,817 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:02:35,817 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:02:35,817 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:02:36,506 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:02:36,506 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:02:36,506 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:02:36,506 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:02:37,109 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:02:37,109 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:02:37,109 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:02:37,109 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:02:37,357 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:02:37,357 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:02:37,357 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:02:37,357 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:02:37,835 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:02:37,835 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:02:37,835 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:02:37,835 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:03:04,851 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-29 00:03:05,369 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-29 00:03:21,783 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-29 00:03:22,074 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-29 00:03:22,656 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-29 00:03:22,958 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-29 00:03:23,206 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-29 00:03:23,528 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-29 00:03:23,840 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-29 00:03:24,278 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-29 00:03:24,523 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-29 00:03:24,810 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-29 00:03:25,060 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-29 00:03:25,353 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-29 00:03:25,596 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-29 00:03:25,868 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-29 00:03:34,164 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:03:34,164 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:03:34,164 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:03:34,164 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:03:34,494 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:03:34,494 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:03:34,494 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:03:34,494 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:03:34,746 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:03:34,746 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:03:34,746 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:03:34,746 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:03:35,242 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:03:35,242 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:03:35,242 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:03:35,242 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:03:35,430 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:03:35,430 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:03:35,430 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:03:35,430 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:03:36,061 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:03:36,061 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:03:36,061 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:03:36,061 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:04:13,693 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:04:13,887 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:04:14,256 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:04:14,930 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:04:15,179 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:04:15,695 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:04:16,016 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-29 00:04:17,057 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-29 00:04:17,694 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-29 00:04:17,698 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-29 00:04:17,698 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-29 00:04:17,700 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-29 00:04:17,965 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-29 00:04:17,967 | ERROR | yfinance | 
+1 Failed download:
+2026-07-29 00:04:17,968 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-29 00:04:18,572 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=2y)
+2026-07-29 00:04:18,573 | ERROR | yfinance | 
+1 Failed download:
+2026-07-29 00:04:18,573 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=2y)
+2026-07-29 00:04:19,252 | ERROR | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TMUBMUSD02Y"}}}
+2026-07-29 00:04:19,785 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-29 00:04:19,787 | ERROR | yfinance | 
+1 Failed download:
+2026-07-29 00:04:19,788 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-29 00:04:20,882 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-29 00:04:20,883 | ERROR | yfinance | 
+1 Failed download:
+2026-07-29 00:04:20,884 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=2y) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-29 00:04:21,984 | INFO | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-07-29 00:04:22,279 | INFO | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-29 00:04:24,882 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-29 00:04:25,297 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-29 00:04:25,300 | ERROR | yfinance | 
+2 Failed downloads:
+2026-07-29 00:04:25,300 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-29 00:04:25,300 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-29 00:04:25,546 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-29 00:04:25,547 | ERROR | yfinance | 
+1 Failed download:
+2026-07-29 00:04:25,548 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-29 00:04:26,099 | ERROR | yfinance | $^AXTWO: possibly delisted; no price data found  (period=6mo)
+2026-07-29 00:04:26,100 | ERROR | yfinance | 
+1 Failed download:
+2026-07-29 00:04:26,101 | ERROR | yfinance | ['^AXTWO']: possibly delisted; no price data found  (period=6mo)
+2026-07-29 00:04:32,819 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-29 00:04:32,820 | ERROR | yfinance | 
+1 Failed download:
+2026-07-29 00:04:32,821 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-29 00:04:33,799 | ERROR | yfinance | $TMUBMUSD02Y: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-29 00:04:33,800 | ERROR | yfinance | 
+1 Failed download:
+2026-07-29 00:04:33,802 | ERROR | yfinance | ['TMUBMUSD02Y']: possibly delisted; no price data found  (period=6mo) (Yahoo error = "No data found, symbol may be delisted")
+2026-07-29 00:05:14,286 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:05:14,571 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:05:14,824 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:05:15,313 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:05:15,559 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:05:16,155 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:06:14,409 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:06:14,658 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:06:14,916 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:06:15,488 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:06:15,741 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:06:16,330 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:07:14,295 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:07:14,615 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:07:14,880 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:07:15,412 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:07:15,658 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:07:16,337 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y
+2026-07-29 00:08:14,276 | WARNING | data.investing_rates | Investing rate fetch failed for BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/germany-10-year-bond-yield
+2026-07-29 00:08:14,488 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for BUND 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkde-10y?countrycode=bx
+2026-07-29 00:08:14,756 | WARNING | data.providers.official_rates | Bundesbank Bund 10Y fetch failed: Bundesbank CSV returned no parseable observations
+2026-07-29 00:08:15,400 | WARNING | data.investing_rates | Investing rate fetch failed for ITALY 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/italy-10-year-bond-yield
+2026-07-29 00:08:15,599 | WARNING | data.providers.marketwatch_rates | MarketWatch rate fetch failed for ITALY 10Y: 401 Client Error: HTTP Forbidden for url: https://www.marketwatch.com/investing/bond/tmbmkit-10y?countrycode=bx
+2026-07-29 00:08:16,095 | WARNING | data.investing_rates | Investing rate fetch failed for BTP-BUND 10Y: 403 Client Error: Forbidden for url: https://www.investing.com/rates-bonds/de-10y-vs-it-10y

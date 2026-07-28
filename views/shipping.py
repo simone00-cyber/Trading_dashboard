@@ -9,6 +9,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
+from config.theme import BG, PANEL, PANEL_2, ORANGE, GREEN, RED, TEXT, MUTED, GRID, BORDER_SOFT
 from shipping.providers.hormuz_strait_monitor import (
     API_URL,
     SOURCE_NAME,
@@ -71,33 +72,33 @@ def _records(value: Any) -> list[dict[str, Any]]:
 def _status_color(value: str) -> str:
     normalized = (value or "").upper()
     if normalized in {"OPEN", "NORMAL", "LOW", "DE-ESCALATION"}:
-        return "#00d26a"
+        return GREEN
     if normalized in {"RESTRICTED", "PARTIAL", "HIGH", "ELEVATED", "TALKS_PROPOSED", "DIPLOMATIC"}:
-        return "#ffb000"
-    return "#ff453a"
+        return ORANGE
+    return RED
 
 
 def _inject_styles() -> None:
     st.markdown(
-        """
+        f"""
         <style>
-        .hmi-kicker{font-size:.72rem;color:#8b949e;letter-spacing:.16em;font-weight:800;margin-bottom:4px}
-        .hmi-title{font-size:1.65rem;font-weight:900;letter-spacing:.035em;color:#f5f7fa;line-height:1.15}
-        .hmi-sub{font-size:.86rem;color:#a8b0ba;margin-top:5px}
-        .hmi-card{background:linear-gradient(180deg,#11161d 0%,#0b0f14 100%);border:1px solid #27313c;border-radius:3px;padding:15px 17px;height:100%}
-        .hmi-card-accent{border-top:2px solid #ff9d00}
-        .hmi-label{font-size:.68rem;color:#8b949e;letter-spacing:.12em;font-weight:800;text-transform:uppercase}
-        .hmi-value{font-size:1.62rem;color:#f5f7fa;font-weight:900;line-height:1.15;margin-top:6px}
-        .hmi-detail{font-size:.78rem;color:#9ca6b2;margin-top:5px;line-height:1.35}
-        .hmi-section{font-size:.78rem;color:#ffb000;letter-spacing:.14em;font-weight:900;border-bottom:1px solid #27313c;padding-bottom:7px;margin:22px 0 12px}
-        .hmi-badge{display:inline-block;padding:3px 7px;border:1px solid currentColor;border-radius:2px;font-size:.66rem;font-weight:900;letter-spacing:.09em}
-        .hmi-news{border-left:2px solid #3b4652;padding:8px 12px;margin-bottom:9px;background:#0d1218}
-        .hmi-news a{color:#f1f3f5;text-decoration:none;font-weight:800}
-        .hmi-news a:hover{color:#ffb000}
-        .hmi-news-meta{font-size:.69rem;color:#8b949e;margin-top:4px}
-        .hmi-source{font-size:.72rem;color:#7f8995;border-top:1px solid #27313c;padding-top:10px;margin-top:18px}
-        div[data-testid="stMetric"]{background:#0d1218;border:1px solid #27313c;padding:10px 12px}
-        div[data-testid="stMetricLabel"]{letter-spacing:.08em;text-transform:uppercase}
+        .hmi-kicker{{font-size:.72rem;color:{MUTED};letter-spacing:.16em;font-weight:800;margin-bottom:4px}}
+        .hmi-title{{font-size:1.65rem;font-weight:900;letter-spacing:.035em;color:{TEXT};line-height:1.15}}
+        .hmi-sub{{font-size:.86rem;color:{MUTED};margin-top:5px}}
+        .hmi-card{{background:linear-gradient(180deg,{PANEL_2} 0%,{PANEL} 100%);border:1px solid {BORDER_SOFT};border-radius:8px;padding:15px 17px;height:100%}}
+        .hmi-card-accent{{border-top:2px solid {ORANGE}}}
+        .hmi-label{{font-size:.68rem;color:{MUTED};letter-spacing:.12em;font-weight:800;text-transform:uppercase}}
+        .hmi-value{{font-size:1.62rem;color:{TEXT};font-weight:900;line-height:1.15;margin-top:6px}}
+        .hmi-detail{{font-size:.78rem;color:{MUTED};margin-top:5px;line-height:1.35}}
+        .hmi-section{{font-size:.78rem;color:{ORANGE};letter-spacing:.14em;font-weight:900;border-bottom:1px solid {BORDER_SOFT};padding-bottom:7px;margin:22px 0 12px}}
+        .hmi-badge{{display:inline-block;padding:3px 7px;border:1px solid currentColor;border-radius:6px;font-size:.66rem;font-weight:900;letter-spacing:.09em}}
+        .hmi-news{{border-left:2px solid {GRID};padding:8px 12px;margin-bottom:9px;background:{PANEL}}}
+        .hmi-news a{{color:{TEXT};text-decoration:none;font-weight:800}}
+        .hmi-news a:hover{{color:{ORANGE}}}
+        .hmi-news-meta{{font-size:.69rem;color:{MUTED};margin-top:4px}}
+        .hmi-source{{font-size:.72rem;color:{MUTED};border-top:1px solid {BORDER_SOFT};padding-top:10px;margin-top:18px}}
+        div[data-testid="stMetric"]{{background:{PANEL};border:1px solid {BORDER_SOFT};padding:10px 12px}}
+        div[data-testid="stMetricLabel"]{{letter-spacing:.08em;text-transform:uppercase}}
         </style>
         """,
         unsafe_allow_html=True,
@@ -120,15 +121,15 @@ def _line_chart(values: list[Any], title: str, suffix: str = "", baseline: float
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x=list(range(1, len(series) + 1)), y=series, mode="lines+markers",
-        line={"width": 2, "color": "#ff9d00"}, marker={"size": 5, "color": "#ff9d00"},
+        line={"width": 2, "color": ORANGE}, marker={"size": 5, "color": ORANGE},
         hovertemplate=f"%{{y:,.2f}}{suffix}<extra></extra>",
     ))
     if baseline is not None:
         fig.add_hline(y=baseline, line_dash="dot", line_color="#66717e", annotation_text="Baseline")
     fig.update_layout(
         title={"text": title, "font": {"size": 13}}, template="plotly_dark", height=285,
-        margin={"l": 15, "r": 15, "t": 45, "b": 15}, paper_bgcolor="#0b0f14", plot_bgcolor="#0b0f14",
-        xaxis={"showgrid": False, "title": ""}, yaxis={"gridcolor": "#202832", "ticksuffix": suffix},
+        margin={"l": 15, "r": 15, "t": 45, "b": 15}, paper_bgcolor=PANEL, plot_bgcolor=PANEL,
+        xaxis={"showgrid": False, "title": ""}, yaxis={"gridcolor": GRID, "ticksuffix": suffix},
         showlegend=False,
     )
     return fig
@@ -139,7 +140,7 @@ def _gauge(value: float, title: str) -> go.Figure:
         mode="gauge+number", value=value, number={"suffix": "%", "font": {"size": 36}},
         title={"text": title, "font": {"size": 12}},
         gauge={
-            "axis": {"range": [0, 100]}, "bar": {"color": "#ff9d00"},
+            "axis": {"range": [0, 100]}, "bar": {"color": ORANGE},
             "steps": [
                 {"range": [0, 25], "color": "#3a1515"},
                 {"range": [25, 60], "color": "#3a2d10"},
@@ -147,7 +148,7 @@ def _gauge(value: float, title: str) -> go.Figure:
             ],
         },
     ))
-    fig.update_layout(template="plotly_dark", height=285, margin={"l": 25, "r": 25, "t": 45, "b": 10}, paper_bgcolor="#0b0f14")
+    fig.update_layout(template="plotly_dark", height=285, margin={"l": 25, "r": 25, "t": 45, "b": 10}, paper_bgcolor=PANEL)
     return fig
 
 
@@ -251,10 +252,10 @@ def _trade_impact(data: dict[str, Any]) -> None:
         fig.add_trace(go.Bar(
             x=regions["oilDependencyPercent"], y=regions["name"], orientation="h",
             text=regions["oilDependencyPercent"].map(lambda x: f"{x:.0f}%"), textposition="outside",
-            marker_color="#ff9d00", customdata=regions[["severity", "description"]].to_numpy(),
+            marker_color=ORANGE, customdata=regions[["severity", "description"]].to_numpy(),
             hovertemplate="<b>%{y}</b><br>Dependency: %{x:.0f}%<br>Severity: %{customdata[0]}<br>%{customdata[1]}<extra></extra>",
         ))
-        fig.update_layout(template="plotly_dark", height=390, margin={"l": 15, "r": 30, "t": 10, "b": 20}, paper_bgcolor="#0b0f14", plot_bgcolor="#0b0f14", xaxis={"range": [0, 100], "ticksuffix": "%", "gridcolor": "#202832"}, yaxis={"categoryorder": "total ascending"})
+        fig.update_layout(template="plotly_dark", height=390, margin={"l": 15, "r": 30, "t": 10, "b": 20}, paper_bgcolor=PANEL, plot_bgcolor=PANEL, xaxis={"range": [0, 100], "ticksuffix": "%", "gridcolor": GRID}, yaxis={"categoryorder": "total ascending"})
         st.plotly_chart(fig, width="stretch", key="hmi_regions")
         display = regions.rename(columns={"name":"REGION","severity":"SEVERITY","oilDependencyPercent":"OIL DEPENDENCY %","description":"INTELLIGENCE NOTE"})
         st.dataframe(display, width="stretch", hide_index=True)
@@ -297,12 +298,12 @@ def _routes(data: dict[str, Any]) -> None:
 
     fig = go.Figure()
     fig.add_trace(go.Bar(
-        x=routes["name"], y=routes["additionalCostPerVessel"], marker_color="#ff9d00",
+        x=routes["name"], y=routes["additionalCostPerVessel"], marker_color=ORANGE,
         text=routes["additionalCostPerVessel"].map(lambda x: f"${x:,.0f}k"), textposition="outside",
         customdata=routes[["additionalDays", "currentUsageStatus"]].to_numpy(),
         hovertemplate="<b>%{x}</b><br>Cost: $%{y:,.0f}k<br>Extra days: %{customdata[0]:.0f}<br>%{customdata[1]}<extra></extra>",
     ))
-    fig.update_layout(template="plotly_dark", height=390, margin={"l": 15, "r": 15, "t": 20, "b": 80}, paper_bgcolor="#0b0f14", plot_bgcolor="#0b0f14", yaxis_title="Additional cost (USD thousands)", yaxis={"gridcolor":"#202832"})
+    fig.update_layout(template="plotly_dark", height=390, margin={"l": 15, "r": 15, "t": 20, "b": 80}, paper_bgcolor=PANEL, plot_bgcolor=PANEL, yaxis_title="Additional cost (USD thousands)", yaxis={"gridcolor":GRID})
     st.plotly_chart(fig, width="stretch", key="hmi_routes")
 
 

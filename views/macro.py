@@ -375,7 +375,8 @@ def render_bond_proxies() -> None:
 
 def render_global_macro() -> None:
     _macro_css()
-    st.markdown("<div class='terminal-header'>GLOBAL MACRO // LIVE RATES, CURVES, FX, COMMODITIES, CREDIT</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section-eyebrow'>MARKET ANALYSIS</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section-title'>Macro & Rates</div>", unsafe_allow_html=True)
     st.caption(
         "Market prices refresh automatically while the page is open. Official macro and yield-curve series retain their native publication frequency."
     )

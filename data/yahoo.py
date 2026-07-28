@@ -89,6 +89,11 @@ def download_close_batch(
                 sleep(0.35)
 
         if series is not None:
+            if ticker in close.columns:
+                # The batch download already produced this column (typically
+                # all-NaN, which is why it was retried) — drop it first so
+                # the join below has no overlapping column name.
+                close = close.drop(columns=[ticker])
             close = close.join(series.rename(ticker), how="outer") if not close.empty else series.to_frame(ticker)
 
     return close.sort_index().dropna(how="all")

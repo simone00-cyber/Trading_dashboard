@@ -13,13 +13,19 @@ def fmt_change(value: float) -> str:
 
 def render_top_bar() -> None:
     now = datetime.now(ZoneInfo("Europe/Rome"))
-    st.markdown(
-        f"<div class='top-terminal-bar'>"
-        f"<span>CYCLICAL GLOBAL MACRO TERMINAL</span>"
-        f"<span>{now.strftime('%A %d %B %Y // %H:%M CET')}</span>"
-        f"</div>",
-        unsafe_allow_html=True,
-    )
+    bar_col, action_col = st.columns([9, 1], vertical_alignment="center")
+    with bar_col:
+        st.markdown(
+            f"<div class='top-terminal-bar'>"
+            f"<span>CYCLICAL GLOBAL MACRO TERMINAL</span>"
+            f"<span>{now.strftime('%A %d %B %Y // %H:%M CET')}</span>"
+            f"</div>",
+            unsafe_allow_html=True,
+        )
+    with action_col:
+        if st.button("🔄", key="clear_data_cache", help="Clear cached data", use_container_width=True):
+            st.cache_data.clear()
+            st.rerun()
 
     strip_universe = {
         "S&P": "^GSPC",

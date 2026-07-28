@@ -11,33 +11,100 @@ BLUE = "#4da3ff"
 CYAN = "#3ee6e0"
 PURPLE = "#b58cff"
 
+# Semantic aliases layered on the palette above. Values are intentionally
+# identical to existing constants so every chart/table that already imports
+# BG/ORANGE/GREEN/RED/etc. keeps rendering exactly as before.
+AI_ACCENT = PURPLE
+STATUS_GOOD = GREEN
+STATUS_WARNING = ORANGE
+STATUS_CRITICAL = RED
+STATUS_INFO = BLUE
+
+SURFACE_RAISED = "#131316"
+BORDER_SOFT = "rgba(255, 255, 255, 0.08)"
+BORDER_STRONG = "rgba(255, 255, 255, 0.16)"
+TEXT_DIM = "#7a7a7a"
+
+SANS_STACK = (
+    '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", '
+    'Roboto, Helvetica, Arial, sans-serif'
+)
+MONO_STACK = '"JetBrains Mono", Consolas, "Courier New", monospace'
+
 CUSTOM_CSS = f"""
 <style>
-html, body, [class*="css"] {{ font-family: Consolas, "Courier New", monospace; }}
-.stApp {{ background: {BG}; color: {TEXT}; }}
-header[data-testid="stHeader"], [data-testid="stToolbar"], [data-testid="stDecoration"], #MainMenu, footer {{ display:none !important; visibility:hidden !important; height:0 !important; }}
-.stApp > header {{ display:none !important; }}
-.block-container {{ padding-top:.25rem !important; padding-bottom:3rem; max-width:100%; }}
-section[data-testid="stSidebar"] {{ background:#080808; border-right:1px solid #272727; }}
-section[data-testid="stSidebar"] * {{ color:{TEXT}; }}
-h1,h2,h3 {{ color:{ORANGE} !important; letter-spacing:.02em; }}
-.top-terminal-bar {{ display:flex; justify-content:space-between; align-items:center; background:{ORANGE}; color:#000; padding:.42rem .70rem; font-weight:900; border-bottom:2px solid #000; margin-bottom:.18rem; }}
-.ticker-strip {{ display:flex; gap:1.10rem; flex-wrap:wrap; background:#0a0a0a; border-top:1px solid #292929; border-bottom:1px solid #292929; padding:.42rem .70rem; margin-bottom:.70rem; font-size:.84rem; }}
-.terminal-header {{ background:{ORANGE}; color:#000; padding:.55rem .8rem; font-weight:800; font-size:1.05rem; margin-bottom:.7rem; border-radius:2px; }}
-.terminal-subheader {{ color:{ORANGE}; border-bottom:1px solid {ORANGE}; padding-bottom:.25rem; margin:.9rem 0 .55rem 0; font-size:.95rem; font-weight:700; }}
-.panel {{ border:1px solid #333; background:{PANEL}; padding:.8rem; }}
-.report-box {{ border:1px solid #333; border-left:4px solid {ORANGE}; padding:1rem 1.1rem; background:{PANEL}; line-height:1.6; color:{TEXT}; }}
-.signal-box {{ border:1px solid #3a3a3a; border-left:5px solid {ORANGE}; padding:.9rem 1rem; background:{PANEL_2}; margin-bottom:.8rem; }}
-.small-note {{ color:{MUTED}; font-size:.82rem; }}
-.regime-badge {{ padding:.55rem .8rem; font-size:1.35rem; font-weight:900; text-align:center; border:1px solid #444; background:{PANEL}; }}
-div[data-testid="stMetric"] {{ background:{PANEL}; border:1px solid #303030; border-radius:2px; padding:.7rem; }}
-div[data-testid="stMetricLabel"] {{ color:{MUTED}; }} div[data-testid="stMetricValue"] {{ color:{TEXT}; }}
-button[kind="primary"] {{ background:{ORANGE} !important; color:#000 !important; border:1px solid {ORANGE} !important; }}
-.stTabs [data-baseweb="tab-list"] {{ gap:2px; background:#080808; }}
-.stTabs [data-baseweb="tab"] {{ background:{PANEL}; border:1px solid #292929; color:{TEXT}; border-radius:0; }}
-.stTabs [aria-selected="true"] {{ background:{ORANGE} !important; color:#000 !important; }}
-div[data-testid="stDataFrame"] {{ border:1px solid #303030; }} hr {{ border-color:#2b2b2b; }} code {{ color:{ORANGE}; }}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
+html, body, [class*="css"] {{ font-family: {SANS_STACK}; }}
+.stApp {{ background: {BG}; color: {TEXT}; }}
+[data-testid="stToolbar"], [data-testid="stDecoration"], #MainMenu, footer {{ display:none !important; visibility:hidden !important; height:0 !important; }}
+.block-container {{ padding-top:.25rem !important; padding-bottom:3rem; max-width:100%; }}
+h1,h2,h3 {{ color:{TEXT}; font-weight:700; letter-spacing:-0.01em; }}
+
+.top-terminal-bar {{ display:flex; justify-content:space-between; align-items:center; background:{ORANGE}; color:#000; padding:.42rem .70rem; font-weight:900; border-bottom:2px solid #000; margin-bottom:.18rem; }}
+.ticker-strip {{ display:flex; gap:1.10rem; flex-wrap:wrap; background:#0a0a0a; border-top:1px solid #292929; border-bottom:1px solid #292929; padding:.42rem .70rem; margin-bottom:.70rem; font-size:.84rem; font-family:{MONO_STACK}; font-variant-numeric: tabular-nums; }}
+.terminal-header {{ background:{ORANGE}; color:#000; padding:.55rem .8rem; font-weight:800; font-size:1.05rem; margin-bottom:.7rem; border-radius:4px; }}
+.terminal-subheader {{ color:{ORANGE}; border-bottom:1px solid {ORANGE}; padding-bottom:.25rem; margin:.9rem 0 .55rem 0; font-size:.95rem; font-weight:700; }}
+.panel {{ border:1px solid {BORDER_SOFT}; background:{PANEL}; padding:.8rem; border-radius:8px; }}
+.report-box {{ border:1px solid {BORDER_SOFT}; border-left:4px solid {ORANGE}; padding:1rem 1.1rem; background:{PANEL}; line-height:1.6; color:{TEXT}; border-radius:0 8px 8px 0; }}
+.signal-box {{ border:1px solid {BORDER_SOFT}; border-left:5px solid {ORANGE}; padding:.9rem 1rem; background:{PANEL_2}; margin-bottom:.8rem; border-radius:0 8px 8px 0; }}
+.small-note {{ color:{MUTED}; font-size:.82rem; }}
+.regime-badge {{ padding:.55rem .8rem; font-size:1.35rem; font-weight:900; text-align:center; border:1px solid {BORDER_STRONG}; background:{PANEL}; border-radius:8px; }}
+
+div[data-testid="stMetric"] {{ background:{PANEL}; border:1px solid {BORDER_SOFT}; border-radius:10px; padding:.85rem 1rem; transition: border-color .15s ease; }}
+div[data-testid="stMetric"]:hover {{ border-color:{BORDER_STRONG}; }}
+div[data-testid="stMetricLabel"] {{ color:{MUTED}; font-size:.78rem; text-transform:uppercase; letter-spacing:.04em; }}
+div[data-testid="stMetricValue"] {{ color:{TEXT}; font-family:{MONO_STACK}; font-variant-numeric: tabular-nums; }}
+
+button[kind="primary"] {{ background:{ORANGE} !important; color:#000 !important; border:1px solid {ORANGE} !important; font-weight:700 !important; }}
+.stTabs [data-baseweb="tab-list"] {{ gap:2px; background:#080808; }}
+.stTabs [data-baseweb="tab"] {{ background:{PANEL}; border:1px solid #292929; color:{TEXT}; border-radius:6px 6px 0 0; }}
+.stTabs [aria-selected="true"] {{ background:{ORANGE} !important; color:#000 !important; }}
+div[data-testid="stDataFrame"] {{ border:1px solid {BORDER_SOFT}; border-radius:8px; font-family:{MONO_STACK}; }}
+hr {{ border-color:#2b2b2b; }} code {{ color:{ORANGE}; font-family:{MONO_STACK}; }}
+
+/* ---- Section headers ---- */
+.section-eyebrow {{ color:{ORANGE}; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; margin-bottom:.35rem; }}
+.section-eyebrow.is-ai {{ color:{AI_ACCENT}; }}
+.section-title {{ font-size:1.9rem; line-height:1.15; font-weight:800; letter-spacing:-0.03em; color:{TEXT}; }}
+.section-subtitle {{ margin-top:.5rem; max-width:820px; font-size:.94rem; line-height:1.55; color:{MUTED}; }}
+div[data-testid="stVerticalBlockBorderWrapper"] {{ border-radius:10px; }}
+
+/* ---- Command Center: thin status line above the assistant ---- */
+.status-line {{ font-size:.86rem; color:{TEXT}; padding:.5rem 0 .9rem 0; }}
+.status-dot {{ display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:.4rem; }}
+.status-muted {{ color:{MUTED}; }}
+.tick-up {{ color:{STATUS_GOOD}; font-family:{MONO_STACK}; font-variant-numeric: tabular-nums; }}
+.tick-down {{ color:{STATUS_CRITICAL}; font-family:{MONO_STACK}; font-variant-numeric: tabular-nums; }}
+
+/* ---- Market Intelligence: the assistant IS the Command Center ---- */
+.cio-persona {{ color:{AI_ACCENT}; font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.5rem; }}
+
+/* ---- Top navigation (st.navigation position="top") ---- */
+header[data-testid="stHeader"] {{ background:{PANEL} !important; border-bottom:1px solid {BORDER_SOFT}; }}
+
+/* ---- Status / severity chips (validation, health) ---- */
+.status-chip {{ display:inline-flex; align-items:center; gap:.35rem; padding:.22rem .6rem; border-radius:999px; font-size:.76rem; font-weight:700; border:1px solid transparent; }}
+.status-chip.is-good {{ background:rgba(0,210,106,0.12); color:{STATUS_GOOD}; border-color:rgba(0,210,106,0.35); }}
+.status-chip.is-warning {{ background:rgba(255,159,0,0.12); color:{STATUS_WARNING}; border-color:rgba(255,159,0,0.35); }}
+.status-chip.is-critical {{ background:rgba(255,59,59,0.12); color:{STATUS_CRITICAL}; border-color:rgba(255,59,59,0.35); }}
+.status-chip.is-info {{ background:rgba(77,163,255,0.12); color:{STATUS_INFO}; border-color:rgba(77,163,255,0.35); }}
+.status-chip.is-neutral {{ background:rgba(255,255,255,0.06); color:{MUTED}; border-color:{BORDER_SOFT}; }}
+
+.badge {{ display:inline-block; padding:.18rem .55rem; border-radius:6px; font-size:.72rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase; background:{PANEL_2}; color:{MUTED}; border:1px solid {BORDER_SOFT}; }}
+.badge.is-long {{ color:{STATUS_GOOD}; border-color:rgba(0,210,106,0.35); }}
+.badge.is-short {{ color:{STATUS_CRITICAL}; border-color:rgba(255,59,59,0.35); }}
+
+/* ---- Workflow stepper (AI Strategy Lab progress) ---- */
+.workflow-stepper {{ display:flex; align-items:center; flex-wrap:wrap; gap:.15rem; margin:.4rem 0 1.1rem 0; }}
+.workflow-step {{ display:flex; align-items:center; gap:.4rem; padding:.35rem .7rem; border-radius:999px; font-size:.76rem; font-weight:600; color:{TEXT_DIM}; background:{PANEL}; border:1px solid {BORDER_SOFT}; }}
+.workflow-step .dot {{ width:7px; height:7px; border-radius:50%; background:{TEXT_DIM}; }}
+.workflow-step.is-done {{ color:{TEXT}; border-color:rgba(0,210,106,0.3); }}
+.workflow-step.is-done .dot {{ background:{STATUS_GOOD}; }}
+.workflow-step.is-active {{ color:#000; background:{AI_ACCENT}; border-color:{AI_ACCENT}; font-weight:700; }}
+.workflow-step.is-active .dot {{ background:#000; }}
+.workflow-step.is-locked {{ opacity:.45; }}
+.workflow-arrow {{ color:{BORDER_STRONG}; font-size:.8rem; }}
 
 /* Fixed loading experience used during page and Asset Workspace transitions. */
 .terminal-loading-overlay {{
@@ -53,13 +120,13 @@ div[data-testid="stDataFrame"] {{ border:1px solid #303030; }} hr {{ border-colo
 .terminal-loading-panel {{
     width: min(680px, 82vw);
     padding: 34px 38px;
-    border: 1px solid #ff9f00;
+    border: 1px solid {ORANGE};
     background: #090909;
     box-shadow: 0 0 50px rgba(255, 159, 0, 0.12);
-    font-family: "Courier New", monospace;
+    font-family: {MONO_STACK};
 }}
 .terminal-loading-kicker {{
-    color: #ff9f00;
+    color: {ORANGE};
     font-weight: 800;
     letter-spacing: 0.08em;
     margin-bottom: 22px;
@@ -69,6 +136,7 @@ div[data-testid="stDataFrame"] {{ border:1px solid #303030; }} hr {{ border-colo
     font-size: 1.35rem;
     font-weight: 800;
     margin-bottom: 9px;
+    font-family: {SANS_STACK};
 }}
 .terminal-loading-detail {{
     color: #8c8c8c;
@@ -84,18 +152,58 @@ div[data-testid="stDataFrame"] {{ border:1px solid #303030; }} hr {{ border-colo
 .terminal-loading-bar {{
     height: 100%;
     width: 42%;
-    background: #ff9f00;
+    background: {ORANGE};
     animation: terminal-loading-slide 1.05s ease-in-out infinite;
 }}
 @keyframes terminal-loading-slide {{
     0% {{ transform: translateX(-110%); }}
     100% {{ transform: translateX(255%); }}
 }}
+
+.ai-lab-header {{
+    padding: 0.25rem 0 0.8rem 0;
+}}
+
+.ai-lab-kicker {{
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    opacity: 0.65;
+    margin-bottom: 0.35rem;
+    color: {AI_ACCENT};
+}}
+
+.ai-lab-title {{
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+}}
+
+.ai-lab-subtitle {{
+    margin-top: 0.55rem;
+    max-width: 780px;
+    font-size: 0.94rem;
+    line-height: 1.5;
+    opacity: 0.72;
+}}
+
+[data-testid="stChatMessage"] {{
+    border: 1px solid {BORDER_SOFT};
+    border-radius: 12px;
+    padding: 0.35rem 0.6rem;
+    margin-bottom: 0.65rem;
+}}
+
+[data-testid="stChatInput"] {{
+    border-radius: 10px;
+}}
 </style>
-
-
 """
 
-# Design System v1.0 additions are appended to the shared stylesheet above through
-# existing semantic classes. All new v12 views deliberately reuse terminal-header,
-# terminal-subheader, report-box, regime-badge and native metric cards.
+# Design System v2.0 (workflow-oriented redesign) is layered on top of v1.0
+# via new semantic classes (section-eyebrow/title/subtitle, cta-card-*,
+# status-chip, badge, workflow-step, nav-*). Existing views deliberately keep
+# reusing terminal-header, terminal-subheader, report-box, regime-badge and
+# native metric cards so this file is the single place visual changes fan out
+# from.
