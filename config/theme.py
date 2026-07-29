@@ -106,6 +106,38 @@ header[data-testid="stHeader"] {{ background:{PANEL} !important; border-bottom:1
 .workflow-step.is-locked {{ opacity:.45; }}
 .workflow-arrow {{ color:{BORDER_STRONG}; font-size:.8rem; }}
 
+/* ---- Research workspace (Technical + Cyclical synthesis) ---- */
+.insight-banner {{ font-size:1.05rem; line-height:1.6; color:{TEXT}; background:{PANEL}; border:1px solid {BORDER_SOFT}; border-left:4px solid {ORANGE}; padding:.9rem 1.1rem; border-radius:0 8px 8px 0; margin-bottom:.7rem; }}
+.evidence-list {{ list-style:none; margin:.4rem 0 .8rem 0; padding:0; }}
+.evidence-list li {{ font-size:.86rem; line-height:1.55; color:{TEXT}; padding:.28rem 0 .28rem 1.1rem; border-left:2px solid {BORDER_SOFT}; margin-bottom:.15rem; }}
+.risk-callout {{ border:1px solid {BORDER_SOFT}; border-left:4px solid {ORANGE}; background:{PANEL_2}; padding:.7rem .9rem; border-radius:0 8px 8px 0; font-size:.88rem; line-height:1.5; color:{TEXT}; margin-bottom:.5rem; }}
+.invalidation-callout {{ border:1px solid {BORDER_SOFT}; border-left:4px solid {RED}; background:{PANEL_2}; padding:.7rem .9rem; border-radius:0 8px 8px 0; font-size:.88rem; line-height:1.5; color:{TEXT}; margin-bottom:.5rem; }}
+.confidence-row {{ display:flex; align-items:center; gap:.6rem; margin:.3rem 0 .7rem 0; }}
+.confidence-track {{ flex:1; height:8px; border-radius:999px; background:{PANEL_2}; border:1px solid {BORDER_SOFT}; overflow:hidden; }}
+.confidence-fill {{ height:100%; border-radius:999px; }}
+.confidence-label {{ font-family:{MONO_STACK}; font-size:.8rem; color:{MUTED}; min-width:3.2rem; text-align:right; }}
+.pattern-card {{ border:1px solid {BORDER_SOFT}; border-radius:8px; padding:.75rem .9rem; margin-bottom:.6rem; background:{PANEL}; }}
+.pattern-card-title {{ font-weight:700; font-size:.95rem; color:{TEXT}; display:flex; justify-content:space-between; align-items:center; }}
+.pattern-card-meta {{ color:{MUTED}; font-size:.78rem; margin:.15rem 0 .5rem 0; }}
+.timeframe-row {{ display:flex; gap:.5rem; flex-wrap:wrap; margin:.4rem 0 .8rem 0; }}
+.timeframe-chip {{ border:1px solid {BORDER_SOFT}; border-radius:8px; padding:.4rem .7rem; font-size:.82rem; font-family:{MONO_STACK}; background:{PANEL_2}; }}
+
+/* ---- Opportunities workspace ---- */
+.opportunity-insight {{ font-size:1.05rem; line-height:1.6; color:{TEXT}; background:{PANEL}; border:1px solid {BORDER_SOFT}; border-left:4px solid {ORANGE}; padding:.9rem 1.1rem; border-radius:0 8px 8px 0; margin-bottom:.9rem; }}
+.opp-card-ticker {{ font-family:{MONO_STACK}; font-size:1.15rem; font-weight:800; color:{TEXT}; display:flex; justify-content:space-between; align-items:center; }}
+.opp-card-rating {{ color:{ORANGE}; font-size:.95rem; letter-spacing:.06em; }}
+.opp-card-company {{ color:{MUTED}; font-size:.82rem; margin-bottom:.4rem; }}
+.opp-card-metrics {{ display:flex; gap:.5rem; margin:.6rem 0; }}
+.opp-card-metric {{ flex:1; min-width:0; background:{PANEL_2}; border:1px solid {BORDER_SOFT}; border-radius:8px; padding:.45rem .55rem; }}
+.opp-card-metric-label {{ display:block; color:{MUTED}; font-size:.66rem; font-weight:600; text-transform:uppercase; letter-spacing:.03em; margin-bottom:.2rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }}
+.opp-card-metric-value {{ display:block; font-family:{MONO_STACK}; font-size:1.02rem; font-weight:700; color:{TEXT}; font-variant-numeric: tabular-nums; white-space:nowrap; }}
+.opp-card-regime {{ font-family:{MONO_STACK}; font-size:.78rem; color:{BLUE}; margin:.5rem 0; letter-spacing:.02em; }}
+.opp-card-reason {{ font-size:.85rem; line-height:1.45; color:{TEXT}; margin-bottom:.4rem; }}
+.opp-card-risk {{ font-size:.85rem; line-height:1.45; color:{MUTED}; margin-bottom:.6rem; }}
+.side-panel-header {{ font-size:.82rem; font-weight:800; letter-spacing:.07em; text-transform:uppercase; padding-bottom:.4rem; margin-bottom:.5rem; border-bottom:2px solid currentColor; }}
+.sector-group-row {{ display:flex; gap:.5rem; margin:.4rem 0 .9rem 0; flex-wrap:wrap; }}
+.funnel-tier-caption {{ color:{MUTED}; font-size:.82rem; margin-bottom:.5rem; }}
+
 /* Fixed loading experience used during page and Asset Workspace transitions. */
 .terminal-loading-overlay {{
     position: fixed;
@@ -197,6 +229,26 @@ header[data-testid="stHeader"] {{ background:{PANEL} !important; border-bottom:1
 
 [data-testid="stChatInput"] {{
     border-radius: 10px;
+}}
+
+/* Hide Streamlit header */
+header[data-testid="stHeader"] {{
+    display: none;
+}}
+
+/* Hide toolbar (top-right menu) */
+[data-testid="stToolbar"] {{
+    display: none;
+}}
+
+/* Hide top decoration */
+[data-testid="stDecoration"] {{
+    display: none;
+}}
+
+/* Reduce top padding */
+.block-container {{
+    padding-top: 1rem !important;
 }}
 </style>
 """

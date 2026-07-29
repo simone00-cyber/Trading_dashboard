@@ -4,7 +4,7 @@ import html
 import streamlit as st
 
 
-_WORKSPACE_MODULES = ["TECHNICAL ANALYSIS", "CYCLICAL ANALYSIS", "RELATIVE STRENGTH"]
+_WORKSPACE_MODULES = ["RESEARCH", "RELATIVE STRENGTH"]
 
 
 def _request_workspace_module() -> None:
@@ -32,12 +32,13 @@ def _loading_overlay(title: str, detail: str):
 def render_asset_workspace() -> None:
     st.markdown("<div class='terminal-header'>ASSET WORKSPACE // COMPLETE SECURITY RESEARCH</div>", unsafe_allow_html=True)
     st.caption(
-        "One ticker controls the complete Technical Analysis, Cyclical Analysis and Relative Strength modules. "
-        "Only the active module is executed, reducing network calls and calculation time without removing functionality."
+        "One ticker drives the unified Research view (market structure, developing patterns, multi-timeframe "
+        "alignment and cyclical position) and the Relative Strength comparison lab. Only the active module is "
+        "executed, reducing network calls and calculation time without removing functionality."
     )
 
     st.session_state.setdefault("workspace_ticker", "AAPL")
-    st.session_state.setdefault("workspace_module", "TECHNICAL ANALYSIS")
+    st.session_state.setdefault("workspace_module", "RESEARCH")
     st.session_state.setdefault("workspace_loading", False)
 
     with st.form("workspace_asset_form", clear_on_submit=False):
@@ -68,7 +69,7 @@ def render_asset_workspace() -> None:
         key="workspace_module",
         on_change=_request_workspace_module,
         width="stretch",
-    ) or "TECHNICAL ANALYSIS"
+    ) or "RESEARCH"
 
     overlay = None
     if st.session_state.get("workspace_loading", False):
@@ -78,12 +79,9 @@ def render_asset_workspace() -> None:
         )
 
     try:
-        if active_module == "TECHNICAL ANALYSIS":
-            from views.technical import render_technical_analysis
-            render_technical_analysis(ticker_override=ticker, embedded=True)
-        elif active_module == "CYCLICAL ANALYSIS":
-            from views.security import render_security_report
-            render_security_report(ticker_override=ticker, embedded=True)
+        if active_module == "RESEARCH":
+            from views.research import render_research
+            render_research(ticker_override=ticker, embedded=True)
         else:
             from views.screener import render_relative_strength_lab
             render_relative_strength_lab(initial_ticker=ticker)

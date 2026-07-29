@@ -15,12 +15,26 @@ from screener.engine import (
     download_universe_ohlc,
     sort_by_methodology,
 )
+from screener.opportunities import (
+    annotate_conviction,
+    build_opportunity_funnel,
+    build_snapshot,
+    classify_sector_group,
+    select_top_opportunities,
+)
 from screener.relative_strength import (
     RS_LAB_WINDOWS,
     build_relative_strength_lab,
     build_sector_composites,
 )
 from screener.universes import UNIVERSES, load_universe
+from ui.opportunity_cards import (
+    render_leaders_laggards,
+    render_opportunity_funnel,
+    render_sector_leadership,
+    render_snapshot,
+    render_top_opportunities,
+)
 
 
 SCREEN_PERIOD = "max"
@@ -87,10 +101,6 @@ def _methodology_columns() -> list[str]:
     ]
 
 
-def _performance_columns(performance_column: str) -> list[str]:
-    return ["Ticker", "Company", "Sector", performance_column, "Last"]
-
-
 def _action_badge_counts(rows: pd.DataFrame) -> dict[str, int]:
     return {
         "BUY": int((rows["Matrix Action"] == "BUY").sum()),
@@ -110,27 +120,34 @@ def _render_methodology_screener(rows: pd.DataFrame, universe_size: int) -> None
     cards[4].metric("SELL SHORT", counts["SELL SHORT"])
     cards[5].metric("NO NEW JUNCTION", counts["NO NEW JUNCTION"])
 
-    st.markdown("<div class='terminal-subheader'>PUBLIC MATRIX SIGNALS</div>", unsafe_allow_html=True)
     st.caption(
         "Signals and Reward/Risk ratings are generated directly from the implemented public "
         "quarterly/monthly/weekly matrix. No synthetic score or weighted ranking is used."
     )
 
-    controls = st.columns([1.15, 1.25, 1.2, 1])
+    controls = st.columns([1.3, 1.15, 1.25, 1.2, 1])
+    search = controls[0].text_input("SEARCH TICKER / COMPANY", value="", placeholder="e.g. AAPL, Eni")
     sectors = ["ALL"] + sorted(rows["Sector"].dropna().astype(str).unique())
-    sector = controls[0].selectbox("SECTOR", sectors, key="method_sector")
+    sector = controls[1].selectbox("SECTOR", sectors, key="method_sector")
 
     actions = ["BUY", "TAKE PROFIT", "SELL SHORT", "NESSUNA NUOVA GIUNTURA"]
-    selected_actions = controls[1].multiselect(
+    selected_actions = controls[2].multiselect(
         "MATRIX ACTION",
         actions,
         default=actions,
         format_func=lambda value: "NO NEW JUNCTION" if value == "NESSUNA NUOVA GIUNTURA" else value,
     )
-    min_rating = controls[2].selectbox("MIN REWARD/RISK", [0, 1, 2, 3, 4], index=0)
-    only_latest_signal = controls[3].toggle("SIGNALS ONLY", value=False)
+    min_rating = controls[3].selectbox("MIN REWARD/RISK", [0, 1, 2, 3, 4], index=0)
+    only_latest_signal = controls[4].toggle("SIGNALS ONLY", value=False)
 
     filtered = rows.copy()
+    if search.strip():
+        needle = search.strip().lower()
+        mask = (
+            filtered["Ticker"].astype(str).str.lower().str.contains(needle, regex=False)
+            | filtered["Company"].astype(str).str.lower().str.contains(needle, regex=False)
+        )
+        filtered = filtered[mask]
     if sector != "ALL":
         filtered = filtered[filtered["Sector"].astype(str) == sector]
     if selected_actions:
@@ -159,150 +176,6 @@ def _render_methodology_screener(rows: pd.DataFrame, universe_size: int) -> None
         mime="text/csv",
         width="content",
     )
-
-
-def _render_sector_ranking(rows: pd.DataFrame) -> None:
-    header = st.columns([1.15, 2.3])
-    selected_window = header[0].selectbox(
-        "PERFORMANCE WINDOW",
-        list(PERFORMANCE_WINDOWS),
-        index=2,
-        key="sector_window",
-    )
-    performance_column = PERFORMANCE_WINDOWS[selected_window][0]
-    header[1].markdown(
-        "<div class='small-note'><br>Sector performance is the equal-weight average adjusted-price return "
-        "of the analysed constituents in the selected index.</div>",
-        unsafe_allow_html=True,
-    )
-
-    sectors = build_sector_performance(rows, performance_column)
-    if sectors.empty:
-        st.info("Sector ranking unavailable for the selected period.")
-        return
-
-    best = sectors.iloc[0]
-    worst = sectors.iloc[-1]
-    cards = st.columns(4)
-    cards[0].metric("LEADING SECTOR", str(best["Sector"]), f"{best['Performance']:+.2f}%")
-    cards[1].metric("LAGGING SECTOR", str(worst["Sector"]), f"{worst['Performance']:+.2f}%")
-    cards[2].metric("SECTORS", len(sectors))
-    cards[3].metric("WINDOW", selected_window)
-
-    left, right = st.columns([1.05, 1.35])
-    with left:
-        table = sectors.rename(
-            columns={
-                "Performance": f"AVG {selected_window} %",
-                "Median": f"MEDIAN {selected_window} %",
-                "Best": "BEST STOCK %",
-                "Worst": "WORST STOCK %",
-            }
-        )
-        st.dataframe(_fmt_table(table), width="stretch", hide_index=True, height=610)
-
-    with right:
-        chart = sectors.sort_values("Performance", ascending=True)
-        fig = px.bar(
-            chart,
-            x="Performance",
-            y="Sector",
-            orientation="h",
-            text="Performance",
-            hover_data=["Stocks", "Median", "Best", "Worst"],
-            labels={"Performance": f"{selected_window} return (%)", "Sector": ""},
-        )
-        fig.update_traces(texttemplate="%{text:+.1f}%", textposition="outside")
-        fig.update_layout(
-            template="plotly_dark",
-            height=610,
-            margin=dict(l=10, r=35, t=15, b=10),
-            xaxis_title=f"Equal-weight {selected_window} performance (%)",
-            yaxis_title="",
-        )
-        st.plotly_chart(fig, width="stretch")
-
-
-def _render_top_flop(rows: pd.DataFrame) -> None:
-    controls = st.columns([1.1, 1.35, 1, 1.6])
-    selected_window = controls[0].selectbox(
-        "PERFORMANCE WINDOW",
-        list(PERFORMANCE_WINDOWS),
-        index=2,
-        key="top_flop_window",
-    )
-    performance_column = PERFORMANCE_WINDOWS[selected_window][0]
-
-    sectors = ["ALL SECTORS"] + sorted(rows["Sector"].dropna().astype(str).unique())
-    selected_sector = controls[1].selectbox("SECTOR", sectors, key="top_flop_sector")
-    count = controls[2].selectbox("SECURITIES PER SIDE", [5, 10, 15, 20], index=0)
-    controls[3].markdown(
-        "<div class='small-note'><br>Top and Flop are based exclusively on adjusted-price performance, "
-        "not on the cyclical matrix.</div>",
-        unsafe_allow_html=True,
-    )
-
-    filtered = rows.dropna(subset=[performance_column]).copy()
-    if selected_sector != "ALL SECTORS":
-        filtered = filtered[filtered["Sector"].astype(str) == selected_sector]
-
-    if filtered.empty:
-        st.info("No securities are available for the selected filters.")
-        return
-
-    top = filtered.nlargest(count, performance_column)
-    flop = filtered.nsmallest(count, performance_column)
-
-    left, right = st.columns(2)
-    with left:
-        st.markdown("<div class='terminal-subheader'>TOP PERFORMERS</div>", unsafe_allow_html=True)
-        top_display = top[_performance_columns(performance_column)].copy()
-        top_display.insert(0, "Rank", range(1, len(top_display) + 1))
-        st.dataframe(
-            _fmt_table(top_display),
-            width="stretch",
-            hide_index=True,
-            height=510,
-            column_config={performance_column: st.column_config.NumberColumn(selected_window, format="%+.2f%%")},
-        )
-
-    with right:
-        st.markdown("<div class='terminal-subheader'>FLOP PERFORMERS</div>", unsafe_allow_html=True)
-        flop_display = flop[_performance_columns(performance_column)].copy()
-        flop_display.insert(0, "Rank", range(1, len(flop_display) + 1))
-        st.dataframe(
-            _fmt_table(flop_display),
-            width="stretch",
-            hide_index=True,
-            height=510,
-            column_config={performance_column: st.column_config.NumberColumn(selected_window, format="%+.2f%%")},
-        )
-
-    chart_rows = pd.concat(
-        [
-            top.assign(Group="TOP"),
-            flop.assign(Group="FLOP"),
-        ],
-        ignore_index=True,
-    ).sort_values(performance_column)
-    fig = px.bar(
-        chart_rows,
-        x=performance_column,
-        y="Ticker",
-        orientation="h",
-        text=performance_column,
-        hover_data=["Company", "Sector"],
-        labels={performance_column: f"{selected_window} return (%)", "Ticker": ""},
-    )
-    fig.update_traces(texttemplate="%{text:+.1f}%", textposition="outside")
-    fig.update_layout(
-        template="plotly_dark",
-        height=max(430, 32 * len(chart_rows)),
-        margin=dict(l=10, r=35, t=20, b=10),
-        showlegend=False,
-    )
-    st.plotly_chart(fig, width="stretch")
-
 
 
 BENCHMARK_PRESETS: dict[str, str] = {
@@ -635,11 +508,11 @@ def render_relative_strength_lab(*, initial_ticker: str | None = None) -> None:
     _render_relative_strength(result.rows, universe, initial_ticker=initial_ticker)
 
 def render_market_screener() -> None:
-    st.markdown("<div class='section-eyebrow'>WHAT TO LOOK AT TODAY</div>", unsafe_allow_html=True)
+    st.markdown("<div class='section-eyebrow'>WHERE OPPORTUNITY IS CONCENTRATING</div>", unsafe_allow_html=True)
     st.markdown("<div class='section-title'>Opportunities</div>", unsafe_allow_html=True)
     st.caption(
-        "Choose an index universe. The Screener follows the implemented public cyclical matrix; "
-        "Sector Ranking and Top & Flop use adjusted-price performance over the selected horizon."
+        "Signals follow the implemented public cyclical matrix; sector leadership and leaders/laggards "
+        "use adjusted-price performance over the selected window."
     )
 
     controls = st.columns([1.25, 1, 2.75])
@@ -664,7 +537,7 @@ def render_market_screener() -> None:
             progress.progress(58, text="Computing quarterly, monthly and weekly Composite Momentum...")
             result, source, universe_size = _run_screen(universe)
             progress.progress(82, text="Applying the public Matrix and Reward/Risk ratings...")
-            progress.progress(100, text="Building screener, sector rankings and relative-strength views...")
+            progress.progress(100, text="Building the opportunity workspace...")
         loading.empty()
     except Exception as exc:
         loading.empty()
@@ -683,30 +556,57 @@ def render_market_screener() -> None:
         f"Updated: {pd.Timestamp.utcnow().strftime('%d %b %Y, %H:%M UTC')}"
     )
 
-    tabs = st.tabs(["SCREENER", "SECTOR RANKING", "TOP & FLOP", "DATA AUDIT"])
-    with tabs[0]:
+    window_controls = st.columns([1.2, 3.8])
+    window_label = window_controls[0].selectbox(
+        "PERFORMANCE WINDOW",
+        list(PERFORMANCE_WINDOWS),
+        index=2,
+        key="opportunities_window",
+    )
+    performance_column = PERFORMANCE_WINDOWS[window_label][0]
+    window_controls[1].markdown(
+        "<div class='small-note'><br>Sector Leadership and Leaders/Laggards use this window. "
+        "Top Opportunities and the Opportunity Funnel follow the public matrix directly and are window-independent.</div>",
+        unsafe_allow_html=True,
+    )
+
+    annotated = annotate_conviction(rows)
+    sectors = classify_sector_group(build_sector_performance(rows, performance_column))
+    snapshot = build_snapshot(annotated, sectors, performance_column, window_label)
+
+    # --- Above the fold: snapshot, top opportunities, sector leadership ---
+    render_snapshot(snapshot)
+    render_top_opportunities(select_top_opportunities(annotated, limit=6))
+    render_sector_leadership(sectors, window_label)
+
+    # --- Leaders / laggards and the research funnel ---
+    performance_rows = rows.dropna(subset=[performance_column])
+    render_leaders_laggards(
+        performance_rows.nlargest(10, performance_column),
+        performance_rows.nsmallest(10, performance_column),
+        performance_column,
+    )
+    render_opportunity_funnel(build_opportunity_funnel(annotated), annotated)
+
+    # --- Progressive disclosure: full universe, then methodology/provenance ---
+    with st.expander("FULL UNIVERSE — SEARCH, FILTER & EXPORT", expanded=False):
         _render_methodology_screener(rows, universe_size)
-    with tabs[1]:
-        _render_sector_ranking(rows)
-    with tabs[2]:
-        _render_top_flop(rows)
-    with tabs[3]:
-        st.markdown("<div class='terminal-subheader'>METHODOLOGY & PROVENANCE</div>", unsafe_allow_html=True)
+
+    with st.expander("METHODOLOGY, PROVENANCE & DATA AUDIT", expanded=False):
         st.write(
             "The Screener does not use an Opportunity Score, Cyclical Score, weighted average or price-performance rank. "
-            "Matrix Action and Reward/Risk Rating are the direct outputs of the implemented public quarterly/monthly/weekly matrix."
+            "Matrix Action and Reward/Risk Rating are the direct outputs of the implemented public quarterly/monthly/weekly matrix. "
+            "The Conviction Tier shown in the Opportunity Funnel only relabels these same outputs for research priority "
+            "(BUY with Reward/Risk ≥ 3 is 'High Conviction', BUY with a lower rating is 'Emerging', no new weekly junction "
+            "is 'Watchlist', TAKE PROFIT is 'Deteriorating' and SELL SHORT is 'Avoid') — it introduces no new score."
         )
         st.write(
             "Display order is non-numeric and transparent: Matrix Action, published Reward/Risk rating, "
             "quarterly direction, monthly direction and Composite values as tie-breakers."
         )
         st.write(
-            "Relative Strength is calculated as the security adjusted-price return minus the selected index benchmark return over the chosen window. "
-            "It is a framework comparison tool and does not alter the public cyclical Matrix signal."
-        )
-        st.write(
-            "Sector Ranking is the equal-weight mean adjusted-price return of constituents in each sector. "
-            "Top & Flop ranks individual securities only by adjusted-price return for 1 day, 1 week, 1 month or 1 year."
+            "Sector Leadership is the equal-weight mean adjusted-price return of constituents in each sector. "
+            "Leaders/Laggards ranks individual securities only by adjusted-price return over the selected window."
         )
         st.write("Adjusted prices are used to neutralise dividends and splits, consistently with the terminal technical engine.")
 

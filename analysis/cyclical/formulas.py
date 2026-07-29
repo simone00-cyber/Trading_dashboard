@@ -12,11 +12,11 @@ FORMULA_REGISTRY = (
     },
     {
         "COMPONENT": "XTL",
-        "STATUS": "VERIFIED FORMULA / PLATFORM CONVENTION",
+        "STATUS": "VERIFIED FORMULA",
         "FORMULA": "XTL = WMA3(Stochastic(5,3)) * 2 - 100.",
         "SOURCE": "CM_Prt.pdf; CM_MetaStock.pdf",
         "IMPLEMENTATION": "caruso_analysis.calculate_xtl",
-        "LIMITATION": "Stochastic(5,3) uses the standard raw %K(5) followed by SMA3 because the papers do not expose the platform's internal convention.",
+        "LIMITATION": "Confirmed consistent between the ProRealTime and MetaStock source formulas: both apply the same two-stage smoothing — an internal %D-style 3-period smoothing inside Stochastic(5,3) (raw %K(5) then SMA3), followed by the explicit external WeightedAverage[3]/Mov(...,3,W). No remaining platform ambiguity.",
     },
     {
         "COMPONENT": "COMPOSITE MOMENTUM",

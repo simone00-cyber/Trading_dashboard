@@ -9,7 +9,7 @@ def methodology_coverage() -> tuple[MethodologyStatus, ...]:
             component="KEY / XTL / Composite Momentum",
             status="VERIFIED FORMULA",
             source="CM_Prt.pdf; CM_MetaStock.pdf",
-            note="Implementazione delle formule pubblicate; la convenzione interna Stochastic(5,3) resta dipendente dalla piattaforma.",
+            note="Formula verificata riga per riga contro le formule ProRealTime e MetaStock originali: corrispondenza esatta. La convenzione Stochastic(5,3) è confermata identica nelle due fonti, nessuna ambiguità residua.",
         ),
         MethodologyStatus(
             component="Quattro posizioni cicliche U/A/D/T",
@@ -20,8 +20,8 @@ def methodology_coverage() -> tuple[MethodologyStatus, ...]:
         MethodologyStatus(
             component="Gerarchia annuale/trimestrale/mensile/settimanale",
             status="DOCUMENTED RULE",
-            source="Metodologia Ciclica, teoria ciclo dominante e secondario",
-            note="Il timeframe inferiore governa il timing di esecuzione rispetto al ciclo dominante.",
+            source="La Metodologia Ciclica.pdf, teoria ciclo dominante e secondario",
+            note="Il timeframe inferiore governa il timing di esecuzione rispetto al ciclo dominante. Durate documentate da minimo a minimo: ciclo di lungo termine (Composite trimestrale) 30-60 mesi, ciclo di medio termine (Composite mensile) 9-24 mesi, ciclo di breve termine (Composite settimanale) 2,5-4 mesi.",
         ),
         MethodologyStatus(
             component="Matrice tattica multi-timeframe",

@@ -12,7 +12,7 @@ from views.screener import render_market_screener
 from views.workspace import render_asset_workspace
 from views.strategy_lab import render_strategy_lab
 from views.methodology import render_methodology
-
+from ui.navigation import render_global_navigation
 configure_logging()
 
 st.set_page_config(
@@ -81,7 +81,7 @@ def _render_ambient_ai_bar() -> None:
         st.session_state["pending_ai_message"] = prompt
         st.switch_page(ai_page)
 
-
+render_global_navigation()
 render_top_bar()
 
 # The AI Strategy Lab has its own chat input, and the Command Center embeds

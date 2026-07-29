@@ -23,7 +23,7 @@ class GeminiProvider(AIProvider):
     not depend directly on the Google SDK.
     """
 
-    DEFAULT_MODEL = "gemini-3.5-flash"
+    DEFAULT_MODEL = "gemini-flash-latest"
 
     def __init__(
         self,
